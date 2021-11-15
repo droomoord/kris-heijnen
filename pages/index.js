@@ -79,7 +79,7 @@ export default function Home() {
             <div className="course">
               <div className="move-right">
                 <h3 className="course__title">
-                  Next.js & React - The Complete Guide
+                  Next.js and React - The Complete Guide
                 </h3>
                 <div className="course__date">jan/feb 2021</div>
               </div>
@@ -93,7 +93,7 @@ export default function Home() {
             <div className="course">
               <div className="move-right">
                 <h3 className="course__title">
-                  Vue JS - The Complete Guide (incl. Vue Router & Vuex)
+                  Vue JS - The Complete Guide (incl. Vue Router and Vuex)
                 </h3>
                 <div className="course__date">aug/sep 2020</div>
               </div>
@@ -107,7 +107,7 @@ export default function Home() {
             <div className="course">
               <div className="move-right">
                 <h3 className="course__title">
-                  MERN Stack Front To Back: Full Stack React, Redux & Node.js
+                  MERN Stack Front To Back: Full Stack React, Redux and Node.js
                 </h3>
                 <div className="course__date">march/april 2020</div>
               </div>

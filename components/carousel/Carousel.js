@@ -53,10 +53,10 @@ export default function App() {
         <SwiperSlide>
           <img src="/degarage-mobile.png" alt={""}></img>
           <p>
-            A visual artist's (responsive) website that I've built with{" "}
+            A visual artists (responsive) website that Ive built with{" "}
             <span className="mono normalize">NextJS</span>. It is mainly used
             for displaying images of upcoming exhibitions, so I made sure that
-            all images are lazy loaded (using Javascript's{" "}
+            all images are lazy loaded (using Javascripts{" "}
             <span className="mono normalize">intersection observer API</span>).
             The website is in Dutch.{" "}
             <a
