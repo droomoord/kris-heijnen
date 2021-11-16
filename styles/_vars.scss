@@ -1,0 +1,10 @@
+$color1: #99ddcc;
+$color2: #9c19e0;
+$color3: #ff5da2;
+$color4: #000d6b;
+$black: #121212;
+$white: rgb(201, 201, 201);
+
+@mixin mono {
+  font-family: "Source Code Pro", monospace;
+}

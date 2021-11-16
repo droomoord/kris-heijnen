@@ -1,10 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 import { useEffect, useRef, useState } from "react";
-
 import Head from "next/head";
 
+//data
+import courses from "../data/courses.json";
+
+//components
 import Carousel from "../components/carousel/Carousel";
 import WriteAnimation from "../components/writeAnimation/WriteAnimation";
+import Course from "../components/course/Course";
 
 export default function Home() {
   const headerRef = useRef(null);
@@ -76,77 +80,17 @@ export default function Home() {
         <section className="courses">
           <h2 className="courses__title">-Courses-</h2>
           <div className="courses__wrapper" ref={coursesRef}>
-            <div className="course">
-              <div className="move-right">
-                <h3 className="course__title">
-                  Next.js and React - The Complete Guide
-                </h3>
-                <div className="course__date">jan/feb 2021</div>
-              </div>
-              <p className="course__description move-left">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-                voluptate tenetur eveniet nesciunt, illo possimus sit?
-                Asperiores vero facilis incidunt non voluptates in officia
-                architecto quasi.
-              </p>
-            </div>
-            <div className="course">
-              <div className="move-right">
-                <h3 className="course__title">
-                  Vue JS - The Complete Guide (incl. Vue Router and Vuex)
-                </h3>
-                <div className="course__date">aug/sep 2020</div>
-              </div>
-              <p className="course__description move-left">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-                voluptate tenetur eveniet nesciunt, illo possimus sit?
-                Asperiores vero facilis incidunt non voluptates in officia
-                architecto quasi.
-              </p>
-            </div>
-            <div className="course">
-              <div className="move-right">
-                <h3 className="course__title">
-                  MERN Stack Front To Back: Full Stack React, Redux and Node.js
-                </h3>
-                <div className="course__date">march/april 2020</div>
-              </div>
-              <p className="course__description move-left">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-                voluptate tenetur eveniet nesciunt, illo possimus sit?
-                Asperiores vero facilis incidunt non voluptates in officia
-                architecto quasi.
-              </p>
-            </div>
-            <div className="course">
-              <div className="move-right">
-                <h3 className="course__title">
-                  React - The Complete Guide (Maximilian Schwarzmüller
-                  @Udemy.com)
-                </h3>
-                <div className="course__date">jan/feb 2020</div>
-              </div>
-              <p className="course__description move-left">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-                voluptate tenetur eveniet nesciunt, illo possimus sit?
-                Asperiores vero facilis incidunt non voluptates in officia
-                architecto quasi.
-              </p>
-            </div>
-            <div className="course">
-              <div className="move-right">
-                <h3 className="course__title">
-                  The Web Developer Bootcamp (Colt Steele @Udemy.com)
-                </h3>
-                <div className="course__date">nov/dec 2019</div>
-              </div>
-              <p className="course__description move-left">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-                voluptate tenetur eveniet nesciunt, illo possimus sit?
-                Asperiores vero facilis incidunt non voluptates in officia
-                architecto quasi.
-              </p>
-            </div>
+            {courses.map((course) => {
+              return (
+                <Course
+                  title={course.title}
+                  date={course.date}
+                  key={course.title}
+                >
+                  {course.description}
+                </Course>
+              );
+            })}
           </div>
         </section>
       </main>

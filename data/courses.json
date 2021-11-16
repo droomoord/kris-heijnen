@@ -1,0 +1,27 @@
+[
+  {
+    "title": "The Web Developer Bootcamp (Colt Steele @Udemy.com)",
+    "date": "nov/dec 2019",
+    "description": "This was the first developer course I took. I knew some HTML knowledge prior to this, but I learned CSS, basic *Javascript*, *Jquery*, *Bootstrap*, *Express* and more. I loved it, this course made me wanting to dive deeper in this subject."
+  },
+  {
+    "title": "React - The Complete Guide (Maximilian Schwarzmüller @Udemy.com)",
+    "date": "jan/feb 2020",
+    "description": "I heard about this thing *React* and wanted to know what is was and what it did, so I did. I learned about *components* (both class and functional), *hooks*, *front-end* *routing*, and a lot more. It made me understand the react basics, and why it is so broadly used."
+  },
+  {
+    "title": "MERN Stack Front To Back: Full Stack React, Redux and Node.js",
+    "date": "march/april 2020",
+    "description": "This course consisted mainly of building a social media application. Starting out with the backend API, creating protected routes, and then moving on to the front-end (react). I also learned how to deal with asynchronous code."
+  },
+  {
+    "title": "Vue JS - The Complete Guide (incl. Vue Router and Vuex",
+    "date": "aug/sep 2020",
+    "description": "Learned the VueJS fundamentals. I found it to be very similar to React bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla "
+  },
+  {
+    "title": "Next.js and React - The Complete Guide",
+    "date": "jan/feb 2021",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus voluptate tenetur eveniet nesciunt, illo possimus sit? Asperiores vero facilis incidunt non voluptates in officia architecto quasi."
+  }
+]

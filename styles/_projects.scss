@@ -1,0 +1,86 @@
+.projects {
+  min-height: 100vh;
+  $arrow-height: 20px;
+  padding-bottom: 41px;
+  margin-bottom: $arrow-height;
+  position: relative;
+  background-color: $color1;
+  width: 100vw;
+  padding-top: $arrow-height;
+  &::before {
+    content: "";
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+    background-color: $color4;
+    z-index: 100;
+    width: 10ch;
+    height: $arrow-height;
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &::after {
+    content: "";
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+    background-color: $color1;
+    z-index: 100;
+    width: 10ch;
+    height: $arrow-height;
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &__title {
+    color: $color4;
+    @include mono;
+  }
+  .mono {
+    color: $color1;
+  }
+  a {
+    color: $color3;
+  }
+  //mobile:
+  .swiper {
+    background-color: $black;
+    padding: 0px;
+    border-radius: 5px;
+    width: 95%;
+    max-width: 1200px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.534);
+    color: $white;
+
+    img {
+      width: 100%;
+      display: block;
+      border-radius: 3px;
+    }
+
+    p {
+      width: 100%;
+      letter-spacing: 0.05em;
+      padding: 1em;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: $black;
+      font-weight: bold;
+
+      text-shadow: 0 0 5px rgb(255, 255, 255);
+      top: 30%;
+    }
+
+    .swiper-pagination-bullet {
+      background-color: white;
+    }
+  }
+  //desktop
+  .cards {
+    display: none;
+  }
+  .card {
+    display: flex;
+  }
+}

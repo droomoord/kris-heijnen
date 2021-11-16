@@ -1,0 +1,81 @@
+.courses {
+  padding-top: 0.05px; //prevents margin colapse
+  padding: 2em 0;
+  &__title {
+    @include mono;
+    color: $color1;
+    margin-bottom: 2em;
+  }
+  &__wrapper {
+    $margin-between-courses: 4em;
+    padding: 0 0.5em;
+    display: flex;
+    flex-direction: column;
+    gap: $margin-between-courses;
+    .course {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      & > * {
+        background-color: #121212;
+        margin: 0;
+        transition: all 0.8s cubic-bezier(0, 0.84, 0.4, 1);
+        transition-delay: 0.8s;
+        opacity: 0;
+        padding: 1em;
+      }
+      &__title {
+        @include mono;
+        font-size: 1.2em;
+        color: $color2;
+        margin: 0;
+      }
+      &__date {
+        color: $color1;
+      }
+      &__description {
+        letter-spacing: 0.05em;
+        color: $white;
+        line-height: 1.4;
+        .highlight {
+          @include mono;
+          color: $color1;
+        }
+      }
+      $radius: 10px;
+      .move-right {
+        border-top-left-radius: $radius;
+        border-top-right-radius: $radius;
+        padding-bottom: 0.5em;
+        transform: translateX(-90%);
+        padding-right: 0.3em;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        justify-content: space-between;
+      }
+      .move-left {
+        border-bottom-right-radius: $radius;
+        border-bottom-left-radius: $radius;
+        padding-top: 0.5em;
+        transform: translateX(90%);
+      }
+      .move-center {
+        transform: none;
+        opacity: 1;
+      }
+      &::after {
+        content: "";
+        height: $margin-between-courses;
+        width: 100px;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        border-left: 5px dashed $black;
+      }
+      &:last-child::after {
+        display: none;
+      }
+    }
+  }
+}
