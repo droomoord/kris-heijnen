@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Head from "next/head";
 
 //data
@@ -9,30 +9,17 @@ import courses from "../data/courses.json";
 import Carousel from "../components/carousel/Carousel";
 import WriteAnimation from "../components/writeAnimation/WriteAnimation";
 import Course from "../components/course/Course";
+import ObserverComponent from "../components/observerComponent/ObserverComponent";
 
 export default function Home() {
   const headerRef = useRef(null);
   const coursesRef = useRef(null);
-
   useEffect(() => {
-    //fade-in of the header elements
+    // fade-in of the header elements
     headerRef.current.querySelectorAll(":scope > *").forEach((el, i) => {
       el.classList.add("fade-in");
       el.style.animationDelay = `${i / 3 + 0.5}s`;
     });
-    //slide-in of the courses elements
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("move-center");
-        }
-      });
-    }, {});
-    coursesRef.current
-      .querySelectorAll(".move-left, .move-right")
-      .forEach((el) => {
-        observer.observe(el);
-      });
   }, []);
   return (
     <div>
@@ -43,15 +30,17 @@ export default function Home() {
 
       <main>
         {/* HEADER */}
-        <header className="header" ref={headerRef}>
-          <div className="my-name-is">Hi, my name is</div>
-          <h1>Kris Heijnen</h1>
-          <div className="avatar">
-            <img src="/avatar.png" alt="kris heijnen" />
+        <header className="header">
+          <div className="header__wrapper" ref={headerRef}>
+            <div className="my-name-is">Hi, my name is</div>
+            <h1>Kris Heijnen</h1>
+            <div className="avatar">
+              <img src="/avatar.png" alt="kris heijnen" />
+            </div>
+            <h4 className="mono">
+              <WriteAnimation sentence="And I love coding..." delay={2000} />
+            </h4>
           </div>
-          <h4 className="mono">
-            <WriteAnimation sentence="And I love coding..." delay={2000} />
-          </h4>
         </header>
         {/* PROJECTS */}
         <section className="projects">
@@ -80,15 +69,26 @@ export default function Home() {
         <section className="courses">
           <h2 className="courses__title">-Courses-</h2>
           <div className="courses__wrapper" ref={coursesRef}>
-            {courses.map((course) => {
+            {courses.map((course, index) => {
+              const observerOptions = {
+                threshold: "1.0",
+              };
               return (
-                <Course
-                  title={course.title}
-                  date={course.date}
-                  key={course.title}
-                >
-                  {course.description}
-                </Course>
+                <>
+                  <ObserverComponent
+                    addClass={["fade-in-course"]}
+                    options={observerOptions}
+                    key={course.title}
+                  >
+                    <Course
+                      title={course.title}
+                      date={course.date}
+                      lastOfArray={index == courses.length - 1}
+                    >
+                      {course.description}
+                    </Course>
+                  </ObserverComponent>
+                </>
               );
             })}
           </div>

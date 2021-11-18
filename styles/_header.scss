@@ -1,59 +1,53 @@
 .header {
-  color: $color1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2em;
-  height: 100vh;
-  background: linear-gradient(180deg, black, $color4);
-  > * {
-    margin: 0;
-    opacity: 0;
-  }
-  .writeAnimation::after {
-    color: white;
-    content: "|";
-    position: absolute;
-    animation-name: on-off;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-  }
-  .avatar {
-    border-radius: 50%;
-    background-color: #f7f7f7;
-    padding: 1em;
-    top: 5em;
-    z-index: 1;
-    img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
+  height: 95vh;
+  background: linear-gradient(180deg, $black 0 50%, $color4);
+  padding-top: 100px;
+  &__wrapper {
+    color: $color1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    > * {
+      margin: 0;
+      opacity: 0;
     }
-  }
+    .avatar {
+      border-radius: 50%;
+      background-color: #f7f7f7;
+      padding: 1em;
+      top: 5em;
+      z-index: 1;
+      img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+      }
+    }
 
-  .my-name-is {
-    background-image: linear-gradient(45deg, $color2, $color3);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center;
-    font-size: clamp(1em, 2vw, 1.5em);
-    margin-bottom: -1em;
-  }
-  h1 {
-    background-image: linear-gradient(45deg, $color2, $color3);
-    background-clip: text;
-    font-family: "Patua One", cursive;
-    -webkit-text-fill-color: transparent;
-    font-size: clamp(2em, 5vw, 4em);
+    .my-name-is {
+      background-image: linear-gradient(45deg, $color2, $color3);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      font-size: clamp(1em, 2vw, 1.5em);
+      margin-bottom: -1em;
+    }
+    h1 {
+      background-image: linear-gradient(45deg, $color2, $color3);
+      background-clip: text;
+      font-family: "Patua One", cursive;
+      -webkit-text-fill-color: transparent;
+      font-size: clamp(2em, 5vw, 4em);
+      letter-spacing: 0.09em;
+      z-index: 2;
+      text-align: center;
+    }
 
-    letter-spacing: 0.05em;
-    z-index: 2;
-    text-align: center;
-  }
-
-  h4 {
-    font-size: clamp(1em, 2vw, 1.5em);
-    width: 20ch;
+    h4 {
+      font-size: clamp(1em, 2vw, 1.5em);
+      width: 20ch;
+    }
   }
 }
