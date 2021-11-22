@@ -1,11 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 
+//swiper
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper";
+
+//data
+import projects from "../../data/projects.json";
 
 export default function App() {
   return (
@@ -21,7 +24,24 @@ export default function App() {
         navigation={true}
         className="mySwiper"
       >
-        <SwiperSlide>
+        {projects.map((project) => {
+          project.description = project.description.replace(
+            /\*(\S*)\*/g,
+            '<span class="highlight normalize">$1</span>'
+          );
+          return (
+            <SwiperSlide key={project.title}>
+              <img src={project.image} alt={project.title}></img>
+              <div className="description">
+                <p
+                  dangerouslySetInnerHTML={{ __html: project.description }}
+                ></p>
+                <a href={project.url}>{project.url}</a>
+              </div>
+            </SwiperSlide>
+          );
+        })}
+        {/* <SwiperSlide>
           <img src="/joao-mobile.png" alt={""}></img>
           <p>
             A website I created for João Vedana, a musician. It is built with{" "}
@@ -85,7 +105,7 @@ export default function App() {
               https://incredible-movie-matcher.herokuapp.com
             </a>
           </p>
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
     </>
   );

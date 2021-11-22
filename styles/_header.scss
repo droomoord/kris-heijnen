@@ -1,6 +1,8 @@
 .header {
-  height: 95vh;
-  background: linear-gradient(180deg, $black 0 50%, $color4);
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(180deg, $black 0 30%, $color4);
   padding-top: 100px;
   &__wrapper {
     color: $color1;
@@ -49,5 +51,64 @@
       font-size: clamp(1em, 2vw, 1.5em);
       width: 20ch;
     }
+  }
+  .waves {
+    display: none;
+    position: absolute;
+    bottom: calc(0% - 10px);
+    svg {
+      width: calc(100vw + 500px);
+    }
+    svg {
+      z-index: 1;
+      path {
+        animation: move infinite;
+        animation-direction: alternate;
+        animation-timing-function: cubic-bezier(0.79, 0, 0.31, 1);
+        fill: $color2;
+      }
+      path:nth-of-type(1) {
+        animation-duration: 10s;
+        opacity: 0.1;
+      }
+      path:nth-of-type(2) {
+        animation-duration: 7s;
+        opacity: 0.2;
+      }
+      path:nth-of-type(3) {
+        animation-duration: 5s;
+        opacity: 0.3;
+      }
+      path:nth-of-type(4) {
+        animation-duration: 10s;
+        opacity: 0.4;
+      }
+    }
+
+    rect {
+      fill: transparent;
+    }
+  }
+  @media only screen and (min-width: 700px) {
+    .waves {
+      display: block;
+    }
+  }
+}
+
+@keyframes move {
+  from {
+    transform: translate3d(-500px, 0, 0);
+  }
+  to {
+    transform: translate3d(0px, 0, 0);
+  }
+}
+@keyframes move-right {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
   }
 }

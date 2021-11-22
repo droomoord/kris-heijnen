@@ -19,15 +19,16 @@ body *::after {
   box-sizing: border-box;
 }
 h2 {
-  font-size: clamp(1em, 2vw, 1.5em);
-  color: $color4;
-  padding: 1em;
+  font-size: 1.3em;
   text-align: center;
-  padding: 0;
 }
 
 .mono {
   @include mono;
+}
+.highlight {
+  @include mono;
+  color: $color1;
 }
 .normalize {
   word-spacing: -0.5em;

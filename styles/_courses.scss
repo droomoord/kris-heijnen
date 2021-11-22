@@ -42,10 +42,6 @@
         color: $white;
         line-height: 1.4;
         margin: 0;
-        .highlight {
-          @include mono;
-          color: $color1;
-        }
       }
       svg {
         position: absolute;

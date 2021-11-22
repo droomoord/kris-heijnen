@@ -55,11 +55,13 @@
       display: block;
       border-radius: 3px;
     }
-
+    .description {
+      padding: 1em;
+    }
     p {
       width: 100%;
       letter-spacing: 0.05em;
-      padding: 1em;
+      margin: 0.5em 0;
     }
 
     .swiper-button-next,
@@ -81,5 +83,12 @@
   }
   .card {
     display: flex;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .projects::before,
+  .projects::after {
+    visibility: hidden;
   }
 }

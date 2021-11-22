@@ -10,6 +10,7 @@ import Carousel from "../components/carousel/Carousel";
 import WriteAnimation from "../components/writeAnimation/WriteAnimation";
 import Course from "../components/course/Course";
 import ObserverComponent from "../components/observerComponent/ObserverComponent";
+import Waves from "../components/waves/Waves";
 
 export default function Home() {
   const headerRef = useRef(null);
@@ -40,6 +41,9 @@ export default function Home() {
             <h4 className="mono">
               <WriteAnimation sentence="And I love coding..." delay={2000} />
             </h4>
+          </div>
+          <div className="waves">
+            <Waves />
           </div>
         </header>
         {/* PROJECTS */}
