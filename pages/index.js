@@ -11,6 +11,7 @@ import WriteAnimation from "../components/writeAnimation/WriteAnimation";
 import Course from "../components/course/Course";
 import ObserverComponent from "../components/observerComponent/ObserverComponent";
 import Waves from "../components/waves/Waves";
+import Carousel3D from "../components/carousel3D/Carousel3D";
 
 export default function Home() {
   const headerRef = useRef(null);
@@ -48,30 +49,17 @@ export default function Home() {
         </header>
         {/* PROJECTS */}
         <section className="projects">
-          <h2 className="projects__title">-Projects-</h2>
+          <h2 className="projects__title">Projects</h2>
           <div className="mobile">
             <Carousel />
           </div>
-          <div className="cards">
-            <div className="card">
-              <img src="/joao-mobile.png" alt={""}></img>
-              <p>
-                A website I created for João Vedana, a musician. It is built
-                with <strong className="mono normalize">NextJS</strong> and a
-                CMS called Sanity. The system is set up in a way that whenever
-                the content changes Vercel creates new static files to be
-                served, which provides for a fast load time and makes it
-                SEO-friendly. <br />
-                <a href="https://www.joaovedana.com/">
-                  https://www.joaovedana.com
-                </a>
-              </p>
-            </div>
+          <div className="desktop">
+            <Carousel3D />
           </div>
         </section>
         {/* COURSES */}
         <section className="courses">
-          <h2 className="courses__title">-Courses-</h2>
+          <h2 className="courses__title">Courses</h2>
           <div className="courses__wrapper" ref={coursesRef}>
             {courses.map((course, index) => {
               const observerOptions = {

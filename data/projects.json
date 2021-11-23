@@ -22,5 +22,11 @@
     "description": "A full stack project: create an account, rate movies, connect with friends and find out which movie you both interested in. It uses *VueJS* in the front-end, *Express* in the back. I implemented authentication, authorization, client-side rendering and web-sockets.",
     "url": "https://incredible-movie-matcher.herokuapp.com/",
     "image": "/moviematcher-mobile.png"
+  },
+  {
+    "title": "krisheijnen.dev",
+    "description": "We all love a little bit of recursion, dont we?",
+    "url": "https://incredible-movie-matcher.herokuapp.com/",
+    "image": "/moviematcher-mobile.png"
   }
 ]
