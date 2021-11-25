@@ -79,9 +79,10 @@
   }
 
   //desktop
+
   .carousel3D {
-    $width: 500px;
-    $height: 400px;
+    $width: 450px;
+    $height: 500px;
     &__container {
       //temp
       padding-top: 5em;
@@ -90,7 +91,7 @@
       width: $width;
       height: $height;
       position: relative;
-      perspective: 1000px;
+      perspective: 1900px;
     }
     &__wrapper {
       height: 100%;
@@ -98,16 +99,38 @@
       position: absolute;
       transform-style: preserve-3d;
       transition: transform 1s;
-      .item {
+      .project {
+        border: 2px solid rgb(145, 145, 145);
+        padding: 1em;
         display: block;
         position: absolute;
         width: $width;
         height: $height;
         text-align: center;
-        color: #fff;
+        color: rgb(211, 211, 211);
         opacity: 0.95;
         border-radius: 10px;
-        background-color: black;
+        background-color: rgb(41, 41, 41);
+        &__title {
+          display: none;
+        }
+        &__image {
+          position: relative;
+          width: 100%;
+          height: 300px;
+          border: 1px solid rgb(145, 145, 145);
+          img {
+            width: 100%;
+          }
+          video {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+          }
+        }
+        &__description {
+        }
       }
     }
     .next,
@@ -142,6 +165,9 @@
 }
 
 @media only screen and (min-width: 700px) {
+  .projects {
+    background-color: black;
+  }
   .projects::before,
   .projects::after {
     visibility: hidden;

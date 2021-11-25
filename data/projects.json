@@ -3,30 +3,30 @@
     "title": "Joao Vedana",
     "description": "A website I created for João Vedana, a musician. It is built with *NextJS* and a CMS called Sanity. The system is set up in a way that whenever the content changes Vercel creates new static files to be served, which provides for a fast load time and makes it SEO-friendly.",
     "url": "https://www.joaovedana.com/",
-    "image": "/joao-mobile.png"
+    "image": "/joao.png"
   },
   {
     "title": "Regexpert",
     "description": "I love *regular* *expressions*. They are short and powerful, but often hard to read. Javascript provides some methods to handle regular expressions. I decided to make a small webapp that lets you test various regExp methods on strings, and outputs colored data.",
     "url": "https://regexp-tester.netlify.app/",
-    "image": "/regexpert-mobile.png"
+    "image": "/regexpert.png"
   },
   {
     "title": "Arteliergalerie de Garage",
     "description": "A visual artists (responsive) website that Ive built with *NextJS*. It is mainly used for displaying images of upcoming exhibitions, so I made sure that all images are lazy loaded (using Javascripts *intersection* *observer* *API*). The website is in Dutch.",
     "url": "https://www.ateliergaleriedegarage.nl/",
-    "image": "/degarage-mobile.png"
+    "image": "/degarage.png"
   },
   {
     "title": "Movie Matcher",
     "description": "A full stack project: create an account, rate movies, connect with friends and find out which movie you both interested in. It uses *VueJS* in the front-end, *Express* in the back. I implemented authentication, authorization, client-side rendering and web-sockets.",
     "url": "https://incredible-movie-matcher.herokuapp.com/",
-    "image": "/moviematcher-mobile.png"
+    "image": "/moviematcher.png"
   },
   {
     "title": "krisheijnen.dev",
     "description": "We all love a little bit of recursion, dont we?",
     "url": "https://incredible-movie-matcher.herokuapp.com/",
-    "image": "/moviematcher-mobile.png"
+    "image": "/moviematcher.png"
   }
 ]

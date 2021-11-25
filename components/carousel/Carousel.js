@@ -31,7 +31,10 @@ export default function App() {
           );
           return (
             <SwiperSlide key={project.title}>
-              <img src={project.image} alt={project.title}></img>
+              <img
+                src={`/static/images-mobile/${project.image}`}
+                alt={project.title}
+              ></img>
               <div className="description">
                 <p
                   dangerouslySetInnerHTML={{ __html: project.description }}
@@ -41,71 +44,6 @@ export default function App() {
             </SwiperSlide>
           );
         })}
-        {/* <SwiperSlide>
-          <img src="/joao-mobile.png" alt={""}></img>
-          <p>
-            A website I created for João Vedana, a musician. It is built with{" "}
-            <strong className="mono normalize">NextJS</strong> and a CMS called
-            Sanity. The system is set up in a way that whenever the content
-            changes Vercel creates new static files to be served, which provides
-            for a fast load time and makes it SEO-friendly. <br />
-            <a href="https://www.joaovedana.com/">https://www.joaovedana.com</a>
-          </p>
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="/regexpert-mobile.png" alt={""}></img>
-          <p>
-            I love{" "}
-            <strong className="mono normalize">regular expressions</strong>.
-            They are short and powerful, but often hard to read. Javascript
-            provides some methods to handle regular expressions. I decided to
-            make a small webapp that lets you test various regExp methods on
-            strings, and outputs colored data. <br />
-            <a
-              target="_blank"
-              href="https://regexp-tester.netlify.app/"
-              rel="noreferrer"
-            >
-              https://regexp-tester.netlify.app
-            </a>
-          </p>
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="/degarage-mobile.png" alt={""}></img>
-          <p>
-            A visual artists (responsive) website that Ive built with{" "}
-            <span className="mono normalize">NextJS</span>. It is mainly used
-            for displaying images of upcoming exhibitions, so I made sure that
-            all images are lazy loaded (using Javascripts{" "}
-            <span className="mono normalize">intersection observer API</span>).
-            The website is in Dutch.{" "}
-            <a
-              href="https://www.ateliergaleriedegarage.nl/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              www.ateliergaleriedegarage.nl
-            </a>
-          </p>
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="/moviematcher-mobile.png" alt={""}></img>
-          <p>
-            A full stack project: create an account, rate movies, connect with
-            friends and find out which movie you both interested in. It uses{" "}
-            <span className="mono normalize">VueJS</span> in the front,{" "}
-            <span className="mono normalize">Express</span> in the back. I
-            implemented authentication, authorization, client-side rendering and
-            web-sockets.
-            <a
-              href="https://incredible-movie-matcher.herokuapp.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              https://incredible-movie-matcher.herokuapp.com
-            </a>
-          </p>
-        </SwiperSlide> */}
       </Swiper>
     </>
   );
