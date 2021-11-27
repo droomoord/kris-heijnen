@@ -47,14 +47,14 @@ const Carousel3D = () => {
                 <div className="project__image">
                   <img
                     className="project__image"
-                    src={`/static/images-mobile/${project.image}`}
+                    src={`/static/images/${project.image}`}
                     alt={project.title}
                   />
                   {index == currentIndex && (
                     <video
                       autoPlay="true"
                       loop
-                      src="/static/videos/joao.mp4"
+                      src={`/static/videos/${project.video}`}
                     ></video>
                   )}
                 </div>
@@ -63,7 +63,12 @@ const Carousel3D = () => {
                   className="project__description"
                   dangerouslySetInnerHTML={{ __html: project.description }}
                 ></p>
-                <a className="project__link" href={project.url}>
+                <a
+                  className="project__link"
+                  href={project.url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {project.url}
                 </a>
               </div>
