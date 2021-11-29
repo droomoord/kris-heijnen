@@ -1,0 +1,62 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: $white;
+  z-index: 50;
+  transition: all 0.3s cubic-bezier(0, 1.1, 1, 1);
+  display: flex;
+  align-items: center;
+  //   justify-content: center;
+  padding: 0 4em;
+
+  &__links {
+  }
+  &__link {
+    $size: 3em;
+    width: $size;
+    height: $size;
+    border: none;
+    $radius: 20px;
+    border-radius: $radius $radius $radius $radius;
+    transition: all 0.1s linear;
+    cursor: pointer;
+    overflow: hidden;
+    color: transparent;
+    // letter-spacing: 0.1em;
+    text-align: center;
+    border: 2px solid $white;
+    @include mono;
+    &:hover {
+      width: 7em;
+    }
+  }
+  .link--projects {
+    background-color: $black;
+    &:hover {
+      color: white;
+    }
+  }
+  .link--courses {
+    background-color: $color4;
+    &:hover {
+      color: $color1;
+    }
+  }
+  .link--about {
+    background-color: $color3;
+    &:hover {
+      color: black;
+    }
+  }
+}
+.navbar--hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+.navbar--visible {
+  transform: translateY(0);
+  opacity: 1;
+}

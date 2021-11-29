@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 
 //data
@@ -12,17 +12,44 @@ import Course from "../components/course/Course";
 import ObserverComponent from "../components/observerComponent/ObserverComponent";
 import Waves from "../components/waves/Waves";
 import Carousel3D from "../components/carousel3D/Carousel3D";
+import Navbar from "../components/navbar/Navbar";
 
 export default function Home() {
-  const headerRef = useRef(null);
+  // refs:
+  const headerWrapperRef = useRef(null);
+  const projectsRef = useRef(null);
   const coursesRef = useRef(null);
+  const coursesWrapperRef = useRef(null);
+  // state:
+  const [scrollPos, setScrollPos] = useState(0);
+
   useEffect(() => {
     // fade-in of the header elements
-    headerRef.current.querySelectorAll(":scope > *").forEach((el, i) => {
+    headerWrapperRef.current.querySelectorAll(":scope > *").forEach((el, i) => {
       el.classList.add("fade-in");
       el.style.animationDelay = `${i / 3 + 0.5}s`;
     });
+    // keep track of scroll position:
+    window.addEventListener("scroll", scrollHandler);
+    function scrollHandler() {
+      setScrollPos(
+        document.body.scrollTop || document.documentElement.scrollTop
+      );
+    }
   }, []);
+  function scrollToSection(section) {
+    switch (section) {
+      case "projects":
+        projectsRef.current.scrollIntoView();
+        break;
+      case "courses":
+        coursesRef.current.scrollIntoView();
+        break;
+      default:
+        break;
+    }
+    // coursesWrapperRef.current.scrollIntoView();
+  }
   return (
     <div>
       <Head>
@@ -33,7 +60,15 @@ export default function Home() {
       <main>
         {/* HEADER */}
         <header className="header">
-          <div className="header__wrapper" ref={headerRef}>
+          <div className="desktop">
+            {
+              <Navbar
+                visibility={scrollPos > 500}
+                scrollToSection={scrollToSection}
+              />
+            }
+          </div>
+          <div className="header__wrapper" ref={headerWrapperRef}>
             <div className="my-name-is">Hi, my name is</div>
             <h1>Kris Heijnen</h1>
             <div className="avatar">
@@ -48,7 +83,7 @@ export default function Home() {
           </div>
         </header>
         {/* PROJECTS */}
-        <section className="projects">
+        <section className="projects" ref={projectsRef}>
           <h2 className="projects__title">Projects</h2>
           <div className="mobile">
             <Carousel />
@@ -58,9 +93,9 @@ export default function Home() {
           </div>
         </section>
         {/* COURSES */}
-        <section className="courses">
+        <section className="courses" ref={coursesRef}>
           <h2 className="courses__title">Courses</h2>
-          <div className="courses__wrapper" ref={coursesRef}>
+          <div className="courses__wrapper" ref={coursesWrapperRef}>
             {courses.map((course, index) => {
               const observerOptions = {
                 threshold: "1.0",

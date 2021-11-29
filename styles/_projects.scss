@@ -6,6 +6,7 @@
   background-color: $color1;
   width: 100vw;
   padding-top: $arrow-height;
+
   &::before {
     content: "";
     clip-path: polygon(50% 100%, 0 0, 100% 0);
@@ -31,7 +32,7 @@
     transform: translateX(-50%);
   }
   &__title {
-    color: $color4;
+    color: $white;
     @include mono;
   }
   .mono {
@@ -117,12 +118,15 @@
         &__image {
           position: relative;
           width: 100%;
-          border: 1px solid rgb(145, 145, 145);
           img {
             width: 100%;
             height: 100%;
           }
           video {
+            opacity: 0;
+            animation-name: fade-in;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
             position: absolute;
             width: 100%;
             height: 100%;
@@ -168,6 +172,8 @@
 @media only screen and (min-width: 700px) {
   .projects {
     background-color: black;
+    padding-top: 70px;
+    height: calc(100vh + 100px);
   }
   .projects::before,
   .projects::after {

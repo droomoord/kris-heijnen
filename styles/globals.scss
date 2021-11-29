@@ -3,6 +3,7 @@
 @import "projects";
 @import "courses";
 @import "animations";
+@import "navbar";
 
 html,
 body {
@@ -11,6 +12,7 @@ body {
   box-sizing: border-box;
   font-family: "Raleway", sans-serif;
   min-height: 300vh;
+  scroll-behavior: smooth;
   // background-color: $color4;
 }
 body *,
