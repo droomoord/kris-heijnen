@@ -72,6 +72,22 @@
 
 @media only screen and (min-width: 700px) {
   .courses {
-    padding-top: 60px;
+    padding: 60px 5vw;
+    &__wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2em;
+      grid-auto-rows: 1fr;
+    }
+    svg {
+      display: none;
+    }
+    .course {
+      justify-content: space-between;
+      height: 100%;
+      &__description {
+        line-height: 1.6;
+      }
+    }
   }
 }

@@ -20,18 +20,18 @@ export default function Home() {
   const projectsRef = useRef(null);
   const coursesRef = useRef(null);
   const coursesWrapperRef = useRef(null);
-  // state:
-  const [scrollPos, setScrollPos] = useState(0);
 
+  // scroll position of the body element:
+  const [scrollPos, setScrollPos] = useState(0);
   useEffect(() => {
-    // fade-in of the header elements
+    // fade-in of the header elements:
     headerWrapperRef.current.querySelectorAll(":scope > *").forEach((el, i) => {
       el.classList.add("fade-in");
       el.style.animationDelay = `${i / 3 + 0.5}s`;
     });
-    // keep track of scroll position:
     window.addEventListener("scroll", scrollHandler);
     function scrollHandler() {
+      // keep track of scroll position:
       setScrollPos(
         document.body.scrollTop || document.documentElement.scrollTop
       );
@@ -48,7 +48,6 @@ export default function Home() {
       default:
         break;
     }
-    // coursesWrapperRef.current.scrollIntoView();
   }
   return (
     <div>
