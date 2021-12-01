@@ -6,19 +6,19 @@ const Navbar = ({ visibility, scrollToSection }) => {
       <div className="navbar__links">
         <button
           onClick={() => scrollToSection("projects")}
-          className="navbar__link link--projects"
+          className="navbar__link projects-link"
         >
           Projects
         </button>
         <button
           onClick={() => scrollToSection("courses")}
-          className="navbar__link link--courses"
+          className="navbar__link courses-link"
         >
           Courses
         </button>
         <button
           onClick={() => scrollToSection("about")}
-          className="navbar__link link--about"
+          className="navbar__link about-link"
         >
           About
         </button>

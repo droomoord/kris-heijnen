@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import { useState } from "react";
 
@@ -21,6 +22,7 @@ const Carousel3D = () => {
       return projects[prev - 1] ? prev - 1 : projects.length - 1;
     });
   }
+
   return (
     <div className="carousel3D">
       <div className="carousel3D__container">
@@ -40,6 +42,7 @@ const Carousel3D = () => {
                 className="project"
                 style={{
                   transform: `rotateY(${turnDeg * index}deg) translateZ(400px)`,
+                  opacity: index == currentIndex ? 1 : 0.5,
                 }}
                 key={project.title}
               >
@@ -77,10 +80,10 @@ const Carousel3D = () => {
         </div>
       </div>
       <div className="next" onClick={next}>
-        Next
+        <img src="/static/images/arrow.svg"></img>
       </div>
       <div className="prev" onClick={prev}>
-        Prev
+        <img src="/static/images/arrow.svg"></img>
       </div>
     </div>
   );

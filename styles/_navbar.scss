@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   //   justify-content: center;
-  padding: 0 4em;
+  padding: 0 2em;
   box-shadow: 0 0 10px black;
 
   &__links {
@@ -34,19 +34,19 @@
       width: 7em;
     }
   }
-  .link--projects {
+  .projects-link {
     background-color: $black;
     &:hover {
       color: white;
     }
   }
-  .link--courses {
+  .courses-link {
     background-color: $color4;
     &:hover {
       color: $color1;
     }
   }
-  .link--about {
+  .about-link {
     background-color: $color3;
     &:hover {
       color: black;

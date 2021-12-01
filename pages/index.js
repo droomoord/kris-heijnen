@@ -20,6 +20,7 @@ export default function Home() {
   const projectsRef = useRef(null);
   const coursesRef = useRef(null);
   const coursesWrapperRef = useRef(null);
+  const aboutRef = useRef(null);
 
   // scroll position of the body element:
   const [scrollPos, setScrollPos] = useState(0);
@@ -44,6 +45,9 @@ export default function Home() {
         break;
       case "courses":
         coursesRef.current.scrollIntoView();
+        break;
+      case "about":
+        aboutRef.current.scrollIntoView();
         break;
       default:
         break;
@@ -118,6 +122,9 @@ export default function Home() {
               );
             })}
           </div>
+        </section>
+        <section className="about" ref={aboutRef}>
+          <h2 className="about__title">About me</h2>
         </section>
       </main>
 

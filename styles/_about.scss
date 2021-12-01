@@ -1,0 +1,10 @@
+.about {
+  min-height: 100vh;
+  background-color: $color2;
+  padding: 80px 0;
+  &__title {
+    margin: 0;
+    @include mono;
+    color: $black;
+  }
+}
