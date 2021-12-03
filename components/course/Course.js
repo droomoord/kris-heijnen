@@ -1,9 +1,8 @@
-const Course = ({ title, date, children, lastOfArray }) => {
-  const description = children.replace(
-    /\*(\S*)\*/g,
-    '<span class="highlight normalize">$1</span>'
-  );
+//functions:
+import { parseToHTML } from "../../functions";
 
+const Course = ({ title, date, children, lastOfArray }) => {
+  const description = parseToHTML(children);
   return (
     <div className="course">
       <div className="course__header">

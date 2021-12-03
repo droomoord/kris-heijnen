@@ -10,6 +10,9 @@ import { Pagination, Navigation, Autoplay } from "swiper";
 //data
 import projects from "../../data/projects.json";
 
+//functions
+import { parseToHTML } from "../../functions";
+
 export default function App() {
   return (
     <>
@@ -25,10 +28,7 @@ export default function App() {
         className="mySwiper"
       >
         {projects.map((project) => {
-          project.description = project.description.replace(
-            /\*(\S*)\*/g,
-            '<span class="highlight normalize">$1</span>'
-          );
+          project.description = parseToHTML(project.description);
           return (
             <SwiperSlide key={project.title}>
               <img

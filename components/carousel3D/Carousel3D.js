@@ -1,27 +1,42 @@
-/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 //data
 import projects from "../../data/projects.json";
 
+//functions
+import { parseToHTML } from "../../functions";
+
 const Carousel3D = () => {
   const [currentDeg, setCurrentDeg] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
-  //how many degees per turn depends on the projects.length:
-  const turnDeg = 360 / projects.length;
-  function next() {
-    setCurrentDeg((p) => p - turnDeg);
-    setCurrentIndex((prev) => {
-      return projects[prev + 1] ? prev + 1 : 0;
+  const [projectsState, setProjectsState] = useState(projects);
+  const [turnDeg, setTurnDeg] = useState(360 / projects.length);
+
+  function clicked(targetIndex) {
+    setCurrentIndex((prevIndex) => {
+      setCurrentDeg((prevDeg) => {
+        return prevDeg + (prevIndex - targetIndex) * turnDeg;
+      });
+      return targetIndex;
     });
   }
-  function prev() {
-    setCurrentDeg((p) => p + turnDeg);
-    setCurrentIndex((prev) => {
-      return projects[prev - 1] ? prev - 1 : projects.length - 1;
-    });
+
+  function remove(targetIndex) {
+    setTimeout(() => {
+      setProjectsState(() => {
+        const projects = [...projectsState];
+        projects.splice(targetIndex, 1);
+        return projects;
+      });
+      setCurrentDeg(0);
+      setCurrentIndex(0);
+    }, 1000);
   }
+
+  useEffect(() => {
+    setTurnDeg(360 / projectsState.length);
+  }, [projectsState]);
 
   return (
     <div className="carousel3D">
@@ -32,18 +47,17 @@ const Carousel3D = () => {
             transform: `rotateY(${currentDeg}deg)`,
           }}
         >
-          {projects.map((project, index) => {
-            project.description = project.description.replace(
-              /\*(\S*)\*/g,
-              '<span class="highlight normalize">$1</span>'
-            );
+          {projectsState.map((project, index) => {
+            project.description = parseToHTML(project.description);
             return (
               <div
-                className="project"
+                className={`project ${
+                  index == currentIndex && "project--active"
+                }`}
                 style={{
                   transform: `rotateY(${turnDeg * index}deg) translateZ(400px)`,
-                  opacity: index == currentIndex ? 1 : 0.5,
                 }}
+                onClick={index != currentIndex ? () => clicked(index) : null}
                 key={project.title}
               >
                 <h4 className="project__title">{project.title}</h4>
@@ -55,7 +69,7 @@ const Carousel3D = () => {
                   />
                   {index == currentIndex && (
                     <video
-                      autoPlay="true"
+                      autoPlay={true}
                       loop
                       src={`/static/videos/${project.video}`}
                     ></video>
@@ -64,6 +78,7 @@ const Carousel3D = () => {
 
                 <p
                   className="project__description"
+                  onClick={() => remove(index)}
                   dangerouslySetInnerHTML={{ __html: project.description }}
                 ></p>
                 <a
@@ -79,12 +94,16 @@ const Carousel3D = () => {
           })}
         </div>
       </div>
-      <div className="next" onClick={next}>
-        <img src="/static/images/arrow.svg"></img>
-      </div>
-      <div className="prev" onClick={prev}>
-        <img src="/static/images/arrow.svg"></img>
-      </div>
+      {/* {projectsState.length < 3 && (
+        <img
+          alt="arrow"
+          src="./public/static/images/arrow.svg"
+          className="next"
+          onClick={() => clicked(currentIndex == 0 ? 1 : 0)}
+        >
+          next
+        </img>
+      )} */}
     </div>
   );
 };

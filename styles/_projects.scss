@@ -99,8 +99,9 @@
       width: 100%;
       position: absolute;
       transform-style: preserve-3d;
-      transition: transform 1s;
+      transition: all 1s;
       .project {
+        opacity: 0.3;
         border: 2px solid rgb(145, 145, 145);
         padding: 1em;
         display: block;
@@ -109,10 +110,9 @@
         height: $height;
         text-align: center;
         color: $white;
-        opacity: 0.95;
         border-radius: 10px;
         background-color: rgb(41, 41, 41);
-        transition: opacity 1s linear;
+        transition: all 0.2s linear;
         &__title {
           display: none;
         }
@@ -137,6 +137,14 @@
         }
         &__description {
         }
+        &:hover {
+          opacity: 1;
+          cursor: pointer;
+        }
+      }
+      .project--active {
+        opacity: 1;
+        cursor: default !important;
       }
     }
     .next,
