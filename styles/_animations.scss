@@ -19,3 +19,9 @@
     width: 70px;
   }
 }
+@keyframes disappear {
+  to {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}

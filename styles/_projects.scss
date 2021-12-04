@@ -1,5 +1,4 @@
 .projects {
-  min-height: 100vh;
   $arrow-height: 20px;
   padding-bottom: 41px;
   position: relative;
@@ -34,6 +33,7 @@
   &__title {
     color: $white;
     @include mono;
+    margin-bottom: 3em;
   }
   .mono {
     color: $color1;
@@ -82,11 +82,47 @@
   //desktop
 
   .carousel3D {
+    .controls {
+      position: absolute;
+      bottom: 3em;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 1em;
+      svg {
+        transition: all 0.1s linear;
+      }
+      .arrow {
+        color: white;
+        opacity: 0.2;
+        cursor: pointer;
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      .dot {
+        fill: $white;
+        opacity: 0.2;
+        &--active {
+          opacity: 1;
+        }
+      }
+      .delete {
+        cursor: pointer;
+        color: $color3;
+        opacity: 0.2;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
     $width: 450px;
-    $height: 450px;
+    $height: 200px;
     &__container {
       //temp
-      padding-top: 5em;
+      // padding-top: 2em;
       //temp-end
       margin: 0 auto;
       width: $width;
@@ -100,6 +136,7 @@
       position: absolute;
       transform-style: preserve-3d;
       transition: all 1s;
+
       .project {
         opacity: 0.3;
         border: 2px solid rgb(145, 145, 145);
@@ -107,12 +144,13 @@
         display: block;
         position: absolute;
         width: $width;
-        height: $height;
+        height: 30em;
         text-align: center;
         color: $white;
         border-radius: 10px;
         background-color: rgb(41, 41, 41);
         transition: all 0.2s linear;
+
         &__title {
           display: none;
         }
@@ -146,40 +184,45 @@
         opacity: 1;
         cursor: default !important;
       }
+      .disappear {
+        animation: disappear 1s ease forwards;
+      }
     }
-    .next,
-    .prev {
+    .reset {
+      font-size: 1.2em;
       position: absolute;
-      right: 8vw;
-      cursor: pointer;
-      width: 80px;
-      perspective: 80px;
-      opacity: 0.3;
-      transition: all 0.1s linear;
-      img {
-        transform: rotateX(60deg) rotate(60deg);
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      align-items: center;
+      button {
+        padding: 0.5em;
+        background-color: $color2;
+        border: 2px solid darken($color2, 20);
+        font-size: inherit;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.1s linear;
+        &:hover {
+          background-color: darken($color2, 20);
+        }
       }
-
-      &:hover {
-        opacity: 0.5;
+      .writeAnimation {
+        color: $color2;
+        @include mono;
       }
-    }
-
-    .next {
-      top: 40%;
-      transform: scaleX(-1);
-    }
-    .prev {
-      top: 50%;
     }
   }
 }
 
 @media only screen and (min-width: 700px) {
   .projects {
+    height: 900px;
     background-color: black;
     padding-top: 70px;
-    height: calc(100vh + 100px);
+    // height: calc(100vh + 100px);
   }
   .projects::before,
   .projects::after {

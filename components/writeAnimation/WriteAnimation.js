@@ -11,7 +11,7 @@ const WriteAnimation = ({ sentence, delay }) => {
         setResult((prev) => prev + sentence.charAt(index));
         index++;
       }
-    }, delay);
+    }, delay || 0);
   }, [sentence, delay]);
   return <span className="writeAnimation">{result}</span>;
 };
