@@ -16,17 +16,17 @@ import WriteAnimation from "../writeAnimation/WriteAnimation";
 const Carousel3D = () => {
   const [currentDeg, setCurrentDeg] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
-  // const [projectsState, setProjectsState] = useState(projects);
-  const [projectsState, setProjectsState] = useState([
-    {
-      title: "Joao Vedana",
-      description:
-        "A website I created for João Vedana, a musician. It is built with *NextJS* and a CMS called Sanity. The system is set up in a way that whenever the content changes Vercel creates new static files to be served, which provides for a fast load time and makes it SEO-friendly.",
-      url: "https://www.joaovedana.com/",
-      image: "/joao.png",
-      video: "joao.mp4",
-    },
-  ]);
+  const [projectsState, setProjectsState] = useState(projects);
+  // const [projectsState, setProjectsState] = useState([
+  //   {
+  //     title: "Joao Vedana",
+  //     description:
+  //       "A website I created for João Vedana, a musician. It is built with *NextJS* and a CMS called Sanity. The system is set up in a way that whenever the content changes Vercel creates new static files to be served, which provides for a fast load time and makes it SEO-friendly.",
+  //     url: "https://www.joaovedana.com/",
+  //     image: "/joao.png",
+  //     video: "joao.mp4",
+  //   },
+  // ]);
   const [turnDeg, setTurnDeg] = useState(360 / projects.length);
   const [projectToBeDeleted, setProjectToBeDeleted] = useState(null);
 
