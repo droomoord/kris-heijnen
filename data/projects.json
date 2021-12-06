@@ -22,16 +22,9 @@
   },
   {
     "title": "Movie Matcher",
-    "description": "A full stack project: create an account, rate movies, connect with friends and find out which movie you both interested in. It uses *VueJS* in the front-end, *Express* in the back. I implemented authentication, authorization, client-side rendering and web-sockets.",
+    "description": "A full stack project: create an account, rate movies, connect with friends and find out which movie you both interested in. It uses *VueJS* and *Bootstrap* in the front-end, *Express* in the back. It's hosted on Heroku, using a free tier so be patient as it loads :)",
     "url": "https://incredible-movie-matcher.herokuapp.com/",
     "image": "/moviematcher.png",
     "video": "moviematcher.mp4"
-  },
-  {
-    "title": "krisheijnen.dev",
-    "description": "Bla bla bla",
-    "url": "https://incredible-movie-matcher.herokuapp.com/",
-    "image": "",
-    "video": ""
   }
 ]

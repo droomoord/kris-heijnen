@@ -25,3 +25,11 @@
     transform: translateY(-100%);
   }
 }
+@keyframes turn {
+  from {
+    transform: rotateY(-1000deg);
+  }
+  to {
+    transform: rotateY(0);
+  }
+}
