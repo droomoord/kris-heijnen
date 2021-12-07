@@ -18,23 +18,22 @@ const Carousel3D = () => {
   const [currentDeg, setCurrentDeg] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [projectsState, setProjectsState] = useState(projects);
-  // const [projectsState, setProjectsState] = useState([
-  //   {
-  //     title: "Joao Vedana",
-  //     description:
-  //       "A website I created for João Vedana, a musician. It is built with *NextJS* and a CMS called Sanity. The system is set up in a way that whenever the content changes Vercel creates new static files to be served, which provides for a fast load time and makes it SEO-friendly.",
-  //     url: "https://www.joaovedana.com/",
-  //     image: "/joao.png",
-  //     video: "joao.mp4",
-  //   },
-  // ]);
   const [turnDeg, setTurnDeg] = useState(360 / projects.length);
   const [projectToBeDeleted, setProjectToBeDeleted] = useState(null);
 
   function clicked(targetIndex) {
     setCurrentIndex((prevIndex) => {
+      let amountOfTurns = prevIndex - targetIndex;
+      //check if there might be a shorter path to the targetIndex:
+      if (Math.abs(amountOfTurns) > projectsState.length / 2) {
+        if (amountOfTurns < 0) {
+          amountOfTurns = projectsState.length - Math.abs(amountOfTurns);
+        } else if (amountOfTurns > 0) {
+          amountOfTurns = Math.abs(amountOfTurns) - projectsState.length;
+        }
+      }
       setCurrentDeg((prevDeg) => {
-        return prevDeg + (prevIndex - targetIndex) * turnDeg;
+        return prevDeg + amountOfTurns * turnDeg;
       });
       return targetIndex;
     });
@@ -49,19 +48,21 @@ const Carousel3D = () => {
         projects.splice(targetIndex, 1);
         return projects;
       });
-      setCurrentDeg(0);
-      setCurrentIndex(0);
     }, 1000);
   }
 
   useEffect(() => {
     setTurnDeg(360 / projectsState.length);
+    setCurrentIndex(0);
+    setCurrentDeg((prevDeg) => {
+      return prevDeg - (prevDeg % 360);
+    });
   }, [projectsState]);
 
   return (
     <ObserverComponent
       addClass={["projects-in-view"]}
-      options={{ threshold: "0.5" }}
+      options={{ threshold: "0.9" }}
     >
       <div className="carousel3D">
         <div className="carousel3D__container">

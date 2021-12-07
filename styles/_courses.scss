@@ -6,6 +6,7 @@
     @include mono;
     color: $color1;
     margin-bottom: 2em;
+    text-align: center;
   }
   &__wrapper {
     $margin-between-courses: 80px;
@@ -75,6 +76,10 @@
   .courses {
     padding: 60px 5vw;
     $gap: 2em;
+    &__title {
+      text-align: left;
+      margin-left: 16vw;
+    }
     &__wrapper {
       display: grid;
       grid-template-columns: 1fr 1fr;

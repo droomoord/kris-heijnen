@@ -17,8 +17,8 @@ const Navbar = ({ visibility, scrollToSection }) => {
           onClick={() => scrollToSection("courses")}
           className="navbar__link courses-link"
         >
-          <span className="letter">C</span>
-          <span className="word">Courses</span>
+          <span className="letter">E</span>
+          <span className="word">Education</span>
         </button>
         <button
           onClick={() => scrollToSection("about")}

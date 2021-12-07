@@ -22,8 +22,7 @@ body *::after {
   box-sizing: border-box;
 }
 h2 {
-  font-size: 1.3em;
-  text-align: center;
+  font-size: 1.2em;
 }
 
 .mono {
@@ -69,5 +68,8 @@ h2 {
   }
   .desktop {
     display: block;
+  }
+  h2 {
+    font-size: 1.5em;
   }
 }

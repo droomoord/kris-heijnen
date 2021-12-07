@@ -1,8 +1,8 @@
 .projects {
+  background-color: black;
   $arrow-height: 20px;
   padding-bottom: 41px;
   position: relative;
-  background-color: $color1;
   width: 100vw;
   padding-top: $arrow-height;
 
@@ -21,7 +21,7 @@
   &::after {
     content: "";
     clip-path: polygon(50% 100%, 0 0, 100% 0);
-    background-color: $color1;
+    background-color: black;
     z-index: 100;
     width: 10ch;
     height: $arrow-height;
@@ -33,10 +33,8 @@
   &__title {
     color: $white;
     @include mono;
-    // margin-bottom: 3em;
-    position: absolute;
-    left: 1em;
-    top: 40%;
+    margin-bottom: 1em;
+    text-align: center;
   }
   .mono {
     color: $color1;
@@ -85,7 +83,7 @@
   //desktop
 
   .carousel3D {
-    padding-top: 9em;
+    padding-top: 3em;
     opacity: 0;
     $width: 450px;
     $height: 300px;
@@ -105,13 +103,12 @@
 
       .project {
         opacity: 0.3;
-        border: 1px solid $white;
+        border: 1px solid rgb(104, 104, 104);
         padding: 1em;
         display: block;
         position: absolute;
         width: $width;
         height: 28em;
-        text-align: center;
         color: $white;
         border-radius: 10px;
         background-color: rgb(41, 41, 41);
@@ -143,6 +140,10 @@
         }
         &__description {
         }
+        &__link {
+          display: block;
+          text-align: center;
+        }
         &:hover {
           opacity: 1;
           cursor: pointer;
@@ -157,8 +158,12 @@
       }
     }
     .controls {
+      background-color: $black;
+      border: 1px solid rgb(104, 104, 104);
+      border-radius: 10px;
+      padding: 0.4em 0.7em;
       position: absolute;
-      bottom: 6em;
+      bottom: 9em;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
@@ -230,8 +235,10 @@
 @media only screen and (min-width: 700px) {
   .projects {
     height: 900px;
-    background-color: black;
     // height: calc(100vh + 100px);
+    &__title {
+      opacity: 0.7;
+    }
   }
 
   .projects::before,

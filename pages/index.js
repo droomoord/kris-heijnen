@@ -13,6 +13,7 @@ import ObserverComponent from "../components/observerComponent/ObserverComponent
 import Waves from "../components/waves/Waves";
 import Carousel3D from "../components/carousel3D/Carousel3D";
 import Navbar from "../components/navbar/Navbar";
+import Form from "../components/form/Form";
 
 export default function Home() {
   // refs:
@@ -53,6 +54,7 @@ export default function Home() {
         break;
     }
   }
+
   return (
     <div>
       <Head>
@@ -78,7 +80,7 @@ export default function Home() {
               <img src="/avatar.png" alt="kris heijnen" />
             </div>
             <h4 className="mono">
-              <WriteAnimation sentence="And I love coding..." delay={2000} />
+              <WriteAnimation sentence="Front-end web developer" delay={2000} />
             </h4>
           </div>
           <div className="waves">
@@ -97,7 +99,7 @@ export default function Home() {
         </section>
         {/* COURSES */}
         <section className="courses" ref={coursesRef}>
-          <h2 className="courses__title">Courses</h2>
+          <h2 className="courses__title">Education</h2>
           <div className="courses__wrapper" ref={coursesWrapperRef}>
             {courses.map((course, index) => {
               const observerOptions = {
@@ -125,6 +127,16 @@ export default function Home() {
         </section>
         <section className="about" ref={aboutRef}>
           <h2 className="about__title">About me</h2>
+
+          <div className="about__wrapper">
+            <p>
+              I have worked most part of my life as a musician, and I am looking
+              for an oportunity to change careers. I have done a little bit of
+              freelancing, but right now mainly focussing on looking for a
+              junior front-end position.
+            </p>
+            <Form></Form>
+          </div>
         </section>
       </main>
 
