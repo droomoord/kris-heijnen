@@ -103,7 +103,7 @@
 
       .project {
         opacity: 0.3;
-        border: 1px solid rgb(104, 104, 104);
+        // border: 1px solid rgb(104, 104, 104);
         padding: 1em;
         display: block;
         position: absolute;
@@ -158,8 +158,8 @@
       }
     }
     .controls {
-      background-color: $black;
-      border: 1px solid rgb(104, 104, 104);
+      // background-color: #292929;
+      border: 1px solid rgb(26, 26, 26);
       border-radius: 10px;
       padding: 0.4em 0.7em;
       position: absolute;
@@ -168,9 +168,12 @@
       transform: translateX(-50%);
       display: flex;
       align-items: center;
-      gap: 1em;
+      // gap: 0.5em;
       svg {
         transition: all 0.1s linear;
+        polyline {
+          fill: white;
+        }
       }
       .arrow {
         color: white;
@@ -180,7 +183,12 @@
           opacity: 1;
         }
       }
-
+      .dots {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+      }
       .dot {
         fill: $white;
         opacity: 0.2;

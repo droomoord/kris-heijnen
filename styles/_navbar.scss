@@ -11,7 +11,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 1em;
-  box-shadow: 0 0 10px black;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.788);
   &__github {
     cursor: pointer;
     a {
@@ -25,7 +25,6 @@
     $radius: 20px;
     width: $size;
     height: $size;
-    border: none;
     border-radius: $radius $radius $radius $radius;
     transition: all 0.1s linear;
     cursor: pointer;
@@ -53,6 +52,7 @@
   }
   .projects-link {
     background-color: $black;
+
     color: white;
   }
   .courses-link {

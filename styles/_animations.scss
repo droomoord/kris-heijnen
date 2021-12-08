@@ -33,3 +33,21 @@
     transform: rotateY(0);
   }
 }
+
+@keyframes blur {
+  to {
+    backdrop-filter: blur(3px);
+    background-color: rgba(0, 0, 0, 0.425);
+  }
+}
+
+@keyframes drop-in {
+  from {
+    transform: translateY(-100px) translate(-50%, -50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) translate(-50%, -50%);
+    opacity: 1;
+  }
+}

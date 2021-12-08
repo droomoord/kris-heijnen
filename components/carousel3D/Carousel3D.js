@@ -9,7 +9,7 @@ import { parseToHTML } from "../../functions";
 
 //components
 import { GoPrimitiveDot } from "react-icons/go";
-import { BiRightArrowCircle } from "react-icons/bi";
+import { GrFormNext } from "react-icons/gr";
 import { VscTrash } from "react-icons/vsc";
 import WriteAnimation from "../writeAnimation/WriteAnimation";
 import ObserverComponent from "../observerComponent/ObserverComponent";
@@ -53,10 +53,10 @@ const Carousel3D = () => {
 
   useEffect(() => {
     setTurnDeg(360 / projectsState.length);
-    setCurrentIndex(0);
-    setCurrentDeg((prevDeg) => {
-      return prevDeg - (prevDeg % 360);
-    });
+    setTimeout(() => {
+      setCurrentDeg((prevDeg) => prevDeg - (prevDeg % 360));
+      setCurrentIndex(0);
+    }, 500);
   }, [projectsState]);
 
   return (
@@ -121,7 +121,7 @@ const Carousel3D = () => {
         </div>
         {projectsState.length > 0 && (
           <div className="controls">
-            <BiRightArrowCircle
+            <GrFormNext
               color="white"
               style={{ transform: "rotate(180deg)" }}
               size="3em"
@@ -132,7 +132,7 @@ const Carousel3D = () => {
                   : () => clicked(projectsState.length - 1)
               }
             />
-            <div>
+            <div className="dots">
               {projectsState.map((project, index) => {
                 return (
                   <GoPrimitiveDot
@@ -144,7 +144,7 @@ const Carousel3D = () => {
                 );
               })}
             </div>
-            <BiRightArrowCircle
+            <GrFormNext
               size="3em"
               className="arrow"
               onClick={

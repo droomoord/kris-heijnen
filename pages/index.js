@@ -13,7 +13,8 @@ import ObserverComponent from "../components/observerComponent/ObserverComponent
 import Waves from "../components/waves/Waves";
 import Carousel3D from "../components/carousel3D/Carousel3D";
 import Navbar from "../components/navbar/Navbar";
-import Form from "../components/form/Form";
+import ContactModal from "../components/contactModal/ContactModal";
+import { AiOutlineMail } from "react-icons/ai";
 
 export default function Home() {
   // refs:
@@ -25,6 +26,7 @@ export default function Home() {
 
   // scroll position of the body element:
   const [scrollPos, setScrollPos] = useState(0);
+  const [contactModal, setContactModal] = useState(false);
   useEffect(() => {
     // fade-in of the header elements:
     headerWrapperRef.current.querySelectorAll(":scope > *").forEach((el, i) => {
@@ -32,13 +34,18 @@ export default function Home() {
       el.style.animationDelay = `${i / 3 + 0.5}s`;
     });
     window.addEventListener("scroll", scrollHandler);
-    function scrollHandler() {
-      // keep track of scroll position:
-      setScrollPos(
-        document.body.scrollTop || document.documentElement.scrollTop
-      );
-    }
   }, []);
+  useEffect(() => {
+    // make the document non-scrollable when the contact modal is visible
+    document.documentElement.style.overflowY = contactModal
+      ? "hidden"
+      : "scroll";
+  }, [contactModal]);
+  function scrollHandler() {
+    // keep track of scroll position:
+    setScrollPos(document.body.scrollTop || document.documentElement.scrollTop);
+  }
+
   function scrollToSection(section) {
     switch (section) {
       case "projects":
@@ -68,7 +75,7 @@ export default function Home() {
           <div className="desktop">
             {
               <Navbar
-                visibility={scrollPos > 500}
+                visibility={scrollPos > 100}
                 scrollToSection={scrollToSection}
               />
             }
@@ -133,9 +140,19 @@ export default function Home() {
               I have worked most part of my life as a musician, and I am looking
               for an oportunity to change careers. I have done a little bit of
               freelancing, but right now mainly focussing on looking for a
-              junior front-end position.
+              junior front-end position. I love working with frameworks like{" "}
+              <span className="mono normalize">React.JS</span> or{" "}
+              <span className="mono normalize">Vue.JS</span>
             </p>
-            <Form></Form>
+            <button
+              className="contact-button"
+              onClick={() => setContactModal(true)}
+            >
+              <AiOutlineMail size="1.2em" /> Contact me!
+            </button>
+            {contactModal && (
+              <ContactModal removeModal={() => setContactModal(false)} />
+            )}
           </div>
         </section>
       </main>

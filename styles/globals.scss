@@ -5,6 +5,7 @@
 @import "animations";
 @import "navbar";
 @import "about";
+@import "contact";
 
 html,
 body {
@@ -14,6 +15,7 @@ body {
   font-family: "Raleway", sans-serif;
   min-height: 300vh;
   scroll-behavior: smooth;
+  overflow-x: hidden;
   // background-color: $color4;
 }
 body *,
@@ -23,6 +25,9 @@ body *::after {
 }
 h2 {
   font-size: 1.2em;
+}
+section {
+  width: 100vw;
 }
 
 .mono {

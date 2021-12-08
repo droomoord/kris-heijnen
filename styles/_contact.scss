@@ -1,0 +1,101 @@
+.backdrop {
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  backdrop-filter: blur(0);
+  background-color: rgba(0, 0, 0, 0);
+  animation: blur 0.2s linear forwards;
+  z-index: 50;
+}
+.contact {
+  // border: 1px solid black;
+  // padding: 0.5em;
+  // border-radius: 10px;
+  cursor: initial;
+  animation: drop-in 0.1s ease-out forwards;
+  border-radius: 10px;
+  padding: 2em 1.5em;
+  background-color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.651);
+
+  //   height: 300px;
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    position: relative;
+
+    .group {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      label {
+        position: absolute;
+        top: 5px;
+        left: 7px;
+        background-color: white;
+        opacity: 0.7;
+        transition: all 0.1s linear;
+      }
+      @mixin move-label {
+        transform: translateY(-14px);
+        font-size: 0.8em;
+        opacity: 1;
+        padding: 0 5px;
+      }
+      input,
+      textarea {
+        @include mono;
+        font-size: 1em;
+        border: 1px solid rgb(74, 74, 74);
+        width: 100%;
+        min-height: 2em;
+        border-radius: 5px;
+        &:focus {
+          outline: none;
+          & + label {
+            @include move-label;
+          }
+        }
+      }
+      .focus {
+        @include move-label;
+      }
+      textarea {
+        height: 10em;
+        resize: none;
+        margin-bottom: 1em;
+      }
+    }
+
+    button {
+      @include button;
+      padding: 0.5em;
+      position: absolute;
+      bottom: 0em;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5em;
+      font-size: 1em;
+    }
+    // grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .contact {
+    width: 30em;
+  }
+}
