@@ -17,12 +17,12 @@ const Form = ({ removeModal }) => {
       form.append("name", name);
       form.append("email", email);
       form.append("message", message);
-      // const res = await axios({
-      //   method: "post",
-      //   url: "https://formcarry.com/s/tCSVXyR26iM",
-      //   headers: { "Content-Type": "multipart/form-data" },
-      //   data: form,
-      // });
+      const res = await axios({
+        method: "post",
+        url: "https://formcarry.com/s/tCSVXyR26iM",
+        headers: { "Content-Type": "multipart/form-data" },
+        data: form,
+      });
       for (var pair of form.entries()) {
         console.log(pair[0] + ", " + pair[1]);
       }

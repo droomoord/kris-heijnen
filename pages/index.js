@@ -142,7 +142,15 @@ export default function Home() {
               freelancing, but right now mainly focussing on looking for a
               junior front-end position. I love working with frameworks like{" "}
               <span className="mono normalize">React.JS</span> or{" "}
-              <span className="mono normalize">Vue.JS</span>
+              <span className="mono normalize">Vue.JS</span> Lorem, ipsum dolor
+              sit amet consectetur adipisicing elit. Ex, nobis sapiente
+              architecto veniam delectus cupiditate nisi. Iste, quisquam
+              voluptatum sequi aperiam corporis impedit, assumenda ratione
+              praesentium illum quo repudiandae debitis. Quo, dolores mollitia
+              rerum nulla corrupti architecto tempora et culpa est delectus
+              animi quibusdam placeat atque numquam. Earum, molestias qui.
+              Incidunt natus earum magni commodi. Reprehenderit unde soluta
+              commodi id.
             </p>
             <button
               className="contact-button"
