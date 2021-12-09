@@ -9,31 +9,38 @@
   background-color: rgba(0, 0, 0, 0);
   animation: blur 0.2s linear forwards;
   z-index: 50;
+  overflow-y: scroll;
 }
 .contact {
-  // border: 1px solid black;
-  // padding: 0.5em;
-  // border-radius: 10px;
   cursor: initial;
-  animation: drop-in 0.1s ease-out forwards;
+  animation: drop-in 0.1s linear forwards;
   border-radius: 10px;
-  padding: 2em 1.5em;
+  padding: 1.5em 1.5em 3em 1.5em;
   background-color: white;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 90vw;
+  max-width: 30em;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.651);
-
-  //   height: 300px;
+  .error {
+    font-size: 0.9em;
+    color: red;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    position: absolute;
+    top: 0.75em;
+    left: 2em;
+    width: 100%;
+  }
   &__form {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
     position: relative;
-
+    .red-border {
+      border: 1px solid red !important;
+    }
     .group {
+      margin-top: 1em;
       width: 100%;
       display: flex;
       justify-content: space-between;
@@ -55,8 +62,9 @@
       }
       input,
       textarea {
-        @include mono;
         font-size: 1em;
+        padding: 0 0.5em;
+        // font-family: inherit;
         border: 1px solid rgb(74, 74, 74);
         width: 100%;
         min-height: 2em;
@@ -72,9 +80,12 @@
         @include move-label;
       }
       textarea {
+        padding-top: 0.5em;
+        // font-size: 1.2em;
         height: 10em;
         resize: none;
         margin-bottom: 1em;
+        font-family: arial;
       }
     }
 
@@ -82,20 +93,41 @@
       @include button;
       padding: 0.5em;
       position: absolute;
-      bottom: 0em;
+      bottom: -2em;
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 0.5em;
       font-size: 1em;
+      outline: none;
     }
-    // grid-template-columns: 1fr;
+  }
+  .sent {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10%;
+    width: 80%;
+    @include mono;
+
+    color: $black;
+    & > *::after {
+      color: $black;
+    }
+  }
+  .close {
+    position: absolute;
+    bottom: 2em;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5em;
+    @include button;
   }
 }
 
-@media only screen and (min-width: 700px) {
-  .contact {
-    width: 30em;
-  }
-}
+// @media only screen and (min-width: 700px) {
+//   .contact {
+//     width: 30em;
+//   }
+// }

@@ -83,9 +83,9 @@ export default function Home() {
           <div className="header__wrapper" ref={headerWrapperRef}>
             <div className="my-name-is">Hi, my name is</div>
             <h1>Kris Heijnen</h1>
-            <div className="avatar">
+            {/* <div className="avatar">
               <img src="/avatar.png" alt="kris heijnen" />
-            </div>
+            </div> */}
             <h4 className="mono">
               <WriteAnimation sentence="Front-end web developer" delay={2000} />
             </h4>
@@ -137,20 +137,15 @@ export default function Home() {
 
           <div className="about__wrapper">
             <p>
-              I have worked most part of my life as a musician, and I am looking
-              for an oportunity to change careers. I have done a little bit of
-              freelancing, but right now mainly focussing on looking for a
-              junior front-end position. I love working with frameworks like{" "}
-              <span className="mono normalize">React.JS</span> or{" "}
-              <span className="mono normalize">Vue.JS</span> Lorem, ipsum dolor
-              sit amet consectetur adipisicing elit. Ex, nobis sapiente
-              architecto veniam delectus cupiditate nisi. Iste, quisquam
-              voluptatum sequi aperiam corporis impedit, assumenda ratione
-              praesentium illum quo repudiandae debitis. Quo, dolores mollitia
-              rerum nulla corrupti architecto tempora et culpa est delectus
-              animi quibusdam placeat atque numquam. Earum, molestias qui.
-              Incidunt natus earum magni commodi. Reprehenderit unde soluta
-              commodi id.
+              I{"'"}m a self taught developer that is looking to get hired. Most
+              of my life I have have worked as a musician, but now I{"'"}m
+              looking for an opportunity to change careers. I have done a bit of
+              freelancing, but I would love to be working as part of a team.
+            </p>
+            <p>
+              I really enjoy working with a front-end framework, such as{" "}
+              <span className="mono normalize">React</span> or{" "}
+              <span className="mono normalize">Vue</span>
             </p>
             <button
               className="contact-button"

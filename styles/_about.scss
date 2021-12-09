@@ -1,11 +1,3 @@
-@mixin button {
-  @include mono;
-  background-color: $color3;
-  border: 2px solid darken($color3, 40);
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-}
 .about {
   min-height: 100vh;
   background-color: $color2;

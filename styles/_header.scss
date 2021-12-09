@@ -4,7 +4,10 @@
   position: relative;
   height: 100vh;
   background: linear-gradient(180deg, $black 0 30%, $color4);
-  padding-top: 100px;
+  // padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   &__wrapper {
     color: $color1;
     display: flex;
@@ -28,28 +31,27 @@
         border-radius: 50%;
       }
     }
-
-    .my-name-is {
+    @mixin gradient {
       background-image: linear-gradient(45deg, $color2, $color3);
       background-clip: text;
       -webkit-text-fill-color: transparent;
+    }
+    .my-name-is {
+      @include gradient;
       text-align: center;
-      font-size: clamp(1em, 2vw, 1.5em);
+      font-size: clamp(1.5em, 2vw, 2em);
       margin-bottom: -1em;
     }
     h1 {
-      background-image: linear-gradient(45deg, $color2, $color3);
-      background-clip: text;
-      font-family: "Patua One", cursive;
-      -webkit-text-fill-color: transparent;
-      font-size: clamp(2em, 5vw, 4em);
-      letter-spacing: 0.09em;
+      @include gradient;
+      font-size: clamp(1.5em, 5vw, 2.5em);
       z-index: 2;
       text-align: center;
     }
 
     h4 {
-      font-size: clamp(1em, 2vw, 1.5em);
+      font-size: clamp(1.2em, 2vw, 1.5em);
+      height: 1em;
     }
   }
   .waves {
@@ -65,7 +67,7 @@
         animation: move infinite;
         animation-direction: alternate;
         animation-timing-function: cubic-bezier(0.79, 0, 0.31, 1);
-        fill: $color2;
+        fill: $color1;
       }
       path:nth-of-type(1) {
         animation-duration: 10s;
@@ -90,6 +92,9 @@
     }
   }
   @media only screen and (min-width: 700px) {
+    h1 {
+      letter-spacing: 0.02em;
+    }
     .waves {
       display: block;
     }

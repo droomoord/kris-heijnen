@@ -16,7 +16,7 @@
 }
 @keyframes grow-line {
   to {
-    width: 70px;
+    width: 30px;
   }
 }
 @keyframes disappear {
@@ -43,7 +43,7 @@
 
 @keyframes drop-in {
   from {
-    transform: translateY(-100px) translate(-50%, -50%);
+    transform: translateY(-50px) translate(-50%, -50%);
     opacity: 0;
   }
   to {

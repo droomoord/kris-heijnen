@@ -1,3 +1,15 @@
+@mixin mono {
+  font-family: "Source Code Pro", monospace;
+}
+@mixin button {
+  @include mono;
+  background-color: $color3;
+  border: 2px solid darken($color3, 40);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 @import "vars";
 @import "header";
 @import "projects";
@@ -16,7 +28,6 @@ body {
   min-height: 300vh;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  // background-color: $color4;
 }
 body *,
 body *::before,
@@ -39,7 +50,7 @@ section {
 }
 .normalize {
   word-spacing: -0.5em;
-  font-size: 0.95em;
+  // font-size: 0.95em;
 }
 .fade-in {
   animation-name: fade-in;

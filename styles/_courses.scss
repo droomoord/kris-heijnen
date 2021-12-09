@@ -9,7 +9,7 @@
     text-align: center;
   }
   &__wrapper {
-    $margin-between-courses: 80px;
+    $margin-between-courses: 40px;
     padding: 0 0.5em;
     display: flex;
     flex-direction: column;
@@ -54,7 +54,7 @@
       }
       line {
         stroke: $black;
-        stroke-width: 10;
+        stroke-width: 8;
       }
     }
     .fade-in-course {
@@ -64,7 +64,7 @@
     }
 
     .fade-in-course svg {
-      animation-delay: 0.5s;
+      animation-delay: 0.2s;
       animation-name: grow-line;
       animation-duration: 0.5s;
       animation-fill-mode: forwards;
