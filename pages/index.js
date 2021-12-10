@@ -29,10 +29,10 @@ export default function Home() {
   const [contactModal, setContactModal] = useState(false);
   useEffect(() => {
     // fade-in of the header elements:
-    headerWrapperRef.current.querySelectorAll(":scope > *").forEach((el, i) => {
-      el.classList.add("fade-in");
-      el.style.animationDelay = `${i / 3 + 0.5}s`;
-    });
+    // headerWrapperRef.current.querySelectorAll(":scope > *").forEach((el, i) => {
+    //   el.classList.add("fade-in");
+    //   el.style.animationDelay = `${i / 3 + 0.5}s`;
+    // });
     window.addEventListener("scroll", scrollHandler);
   }, []);
   useEffect(() => {
@@ -81,14 +81,19 @@ export default function Home() {
             }
           </div>
           <div className="header__wrapper" ref={headerWrapperRef}>
-            <div className="my-name-is">Hi, my name is</div>
-            <h1>Kris Heijnen</h1>
-            {/* <div className="avatar">
+            <div className="avatar">
               <img src="/avatar.png" alt="kris heijnen" />
-            </div> */}
-            <h4 className="mono">
-              <WriteAnimation sentence="Front-end web developer" delay={2000} />
-            </h4>
+            </div>
+            <div className="group">
+              <div className="my-name-is">Hi, my name is</div>
+              <h1>Kris Heijnen</h1>
+              <h4 className="mono">
+                <WriteAnimation
+                  sentence="Front-end web developer"
+                  delay={1000}
+                />
+              </h4>
+            </div>
           </div>
           <div className="waves">
             <Waves />

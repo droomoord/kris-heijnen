@@ -9,7 +9,7 @@
   &::before {
     content: "";
     clip-path: polygon(50% 100%, 0 0, 100% 0);
-    background-color: $color4;
+    background-color: $color2;
     z-index: 100;
     width: 10ch;
     height: $arrow-height;
@@ -31,8 +31,8 @@
     transform: translateX(-50%);
   }
   &__title {
-    color: $white;
-    @include mono;
+    @include header;
+    color: #c9c9c9;
     margin-bottom: 1em;
     text-align: center;
   }
@@ -83,7 +83,7 @@
   //desktop
 
   .carousel3D {
-    padding-top: 3em;
+    padding-top: 5em;
     opacity: 0;
     $width: 450px;
     $height: 300px;
@@ -103,8 +103,7 @@
 
       .project {
         opacity: 0.3;
-        // border: 1px solid rgb(104, 104, 104);
-        padding: 1em;
+        padding: 1.5em;
         display: block;
         position: absolute;
         width: $width;
@@ -163,7 +162,7 @@
       border-radius: 10px;
       padding: 0.4em 0.7em;
       position: absolute;
-      bottom: 9em;
+      bottom: 7em;
       left: 50%;
       transform: translateX(-50%);
       display: flex;

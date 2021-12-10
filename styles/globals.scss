@@ -9,6 +9,12 @@
   border-radius: 5px;
   cursor: pointer;
 }
+@mixin header {
+  font-weight: normal;
+  font-size: 1.3em;
+  letter-spacing: 0.05em;
+  // text-transform: uppercase;
+}
 
 @import "vars";
 @import "header";

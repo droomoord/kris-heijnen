@@ -3,58 +3,61 @@
   width: 100vw;
   position: relative;
   height: 100vh;
-  background: linear-gradient(180deg, $black 0 30%, $color4);
-  // padding-top: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  background: linear-gradient(180deg, $black 0 10%, $color2);
   &__wrapper {
-    color: $color1;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2em;
-    > * {
-      margin: 0;
-      opacity: 0;
+    .group {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1em;
+      > * {
+        margin: 0;
+      }
+      .my-name-is,
+      h1 {
+        color: rgb(19, 19, 19);
+      }
+      .my-name-is {
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+      h1 {
+        font-size: 1.5em;
+      }
+
+      h4 {
+        color: $color1;
+        size: 1.2em;
+        height: 1em;
+        width: 25ch;
+      }
     }
     .avatar {
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.589);
       border-radius: 50%;
       background-color: #f7f7f7;
       padding: 1em;
       top: 5em;
       z-index: 1;
       img {
-        width: 150px;
-        height: 150px;
+        width: 100px;
+        height: 100px;
         border-radius: 50%;
       }
     }
-    @mixin gradient {
-      background-image: linear-gradient(45deg, $color2, $color3);
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .my-name-is {
-      @include gradient;
-      text-align: center;
-      font-size: clamp(1.5em, 2vw, 2em);
-      margin-bottom: -1em;
-    }
-    h1 {
-      @include gradient;
-      font-size: clamp(1.5em, 5vw, 2.5em);
-      z-index: 2;
-      text-align: center;
-    }
-
-    h4 {
-      font-size: clamp(1.2em, 2vw, 1.5em);
-      height: 1em;
-    }
   }
   .waves {
+    filter: blur(2px);
     display: none;
     position: absolute;
     bottom: calc(0% - 10px);
@@ -67,7 +70,7 @@
         animation: move infinite;
         animation-direction: alternate;
         animation-timing-function: cubic-bezier(0.79, 0, 0.31, 1);
-        fill: $color1;
+        fill: $color4;
       }
       path:nth-of-type(1) {
         animation-duration: 10s;
@@ -92,28 +95,29 @@
     }
   }
   @media only screen and (min-width: 700px) {
-    h1 {
-      letter-spacing: 0.02em;
+    .header__wrapper {
+      flex-direction: row;
+      .avatar img {
+        width: 120px;
+        height: 120px;
+      }
+      .group {
+        text-align: left;
+        h1,
+        .my-name-is {
+          font-size: 2em;
+        }
+        h1 {
+          letter-spacing: 0.05em;
+        }
+      }
+      h4 {
+        font-size: 1.5em;
+      }
     }
+
     .waves {
       display: block;
     }
-  }
-}
-
-@keyframes move {
-  from {
-    transform: translate3d(-500px, 0, 0);
-  }
-  to {
-    transform: translate3d(0px, 0, 0);
-  }
-}
-@keyframes move-right {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(100%);
   }
 }

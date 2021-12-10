@@ -5,7 +5,7 @@
   &__title {
     margin: 0;
     margin-bottom: 1em;
-    @include mono;
+    @include header;
     color: $black;
     text-align: center;
   }
