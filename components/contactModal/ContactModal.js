@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 import { FiSend } from "react-icons/fi";
 
@@ -17,6 +17,11 @@ const Form = ({ removeModal }) => {
   const messageRef = useRef(null);
   const [errorMessage, setErrorMessage] = useState("");
   const [errorType, setErrorType] = useState("");
+  useEffect(() => {
+    setTimeout(() => {
+      nameRef.current.focus();
+    }, 500);
+  }, []);
   async function submitForm(e) {
     try {
       e.preventDefault();

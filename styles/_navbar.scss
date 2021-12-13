@@ -4,64 +4,63 @@
   left: 0;
   width: 100%;
   height: 60px;
-  background-color: $white;
-  z-index: 50;
+  background-color: white;
+  z-index: 200;
   transition: all 0.3s cubic-bezier(0, 1.1, 1, 1);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 0 1em;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.788);
-  &__github {
+  .progress-bar {
+    transition: transform 0.3s ease;
+    transform-origin: left;
+    position: absolute;
+    width: 70%;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    background: $color2;
+  }
+
+  &__links {
+    // background-color: orange;
+    position: absolute;
+    top: 50%;
+    transform: translateY(calc(-50% - 10px));
+    left: 0;
+    width: 70%;
+  }
+  &__link {
+    @include mono;
+    cursor: pointer;
+    border: none;
+    background-color: inherit;
+    // font-family: inherit;
+    font-size: 1em;
+    position: absolute;
+  }
+  .projects-link {
+    left: 25%;
+  }
+  .courses-link {
+    left: 60%;
+  }
+  .about-link {
+    left: 95%;
+  }
+}
+.side-links {
+  width: 30%;
+  height: 100%;
+  right: 0;
+  position: absolute;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 1em;
+  .github {
     cursor: pointer;
     a {
       color: $black;
     }
-  }
-  &__links {
-  }
-  &__link {
-    $size: 3em;
-    $radius: 20px;
-    width: $size;
-    height: $size;
-    border-radius: $radius $radius $radius $radius;
-    transition: all 0.1s linear;
-    cursor: pointer;
-    overflow: hidden;
-    color: transparent;
-    text-align: center;
-    border: 2px solid $white;
-    @include mono;
-    .letter {
-      text-align: center;
-      opacity: 0.5;
-    }
-    .word {
-      display: none;
-    }
-    &:hover {
-      width: 7em;
-      .letter {
-        display: none;
-      }
-      .word {
-        display: inline;
-      }
-    }
-  }
-  .projects-link {
-    background-color: $black;
-
-    color: white;
-  }
-  .courses-link {
-    background-color: $color4;
-    color: $color1;
-  }
-  .about-link {
-    background-color: $color2;
-    color: black;
   }
 }
 .navbar--hidden {

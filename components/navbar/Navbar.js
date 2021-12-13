@@ -1,41 +1,66 @@
 import { BsGithub } from "react-icons/bs";
 
-const Navbar = ({ visibility, scrollToSection }) => {
+import { useState, useEffect } from "react";
+
+const Navbar = ({
+  scrollToSection,
+  scrollPos,
+  documentHeight,
+  windowHeight,
+}) => {
+  const [progress, setProgress] = useState(0);
+  useEffect(() => {
+    setProgress((scrollPos / (documentHeight - windowHeight)).toFixed(2));
+  }, [documentHeight, scrollPos, windowHeight]);
   return (
     <nav
-      className={`navbar ${visibility ? "navbar--visible" : "navbar--hidden"}`}
+      className={`navbar ${
+        scrollPos > 10 ? "navbar--visible" : "navbar--hidden"
+      }`}
     >
+      <div
+        className="progress-bar"
+        style={{
+          transform: `scaleX(${progress})`,
+        }}
+      ></div>
+
       <div className="navbar__links">
         <button
           onClick={() => scrollToSection("projects")}
           className="navbar__link projects-link"
         >
-          <span className="letter">P</span>
-          <span className="word">Projects</span>
+          Projects
         </button>
         <button
           onClick={() => scrollToSection("courses")}
           className="navbar__link courses-link"
         >
-          <span className="letter">E</span>
-          <span className="word">Education</span>
+          Education
         </button>
         <button
           onClick={() => scrollToSection("about")}
           className="navbar__link about-link"
         >
-          <span className="letter">A</span>
-          <span className="word">About</span>
+          About
+        </button>
+        <button
+          onClick={() => scrollToSection("contact")}
+          className="navbar__link contact-link"
+        >
+          Contact
         </button>
       </div>
-      <div className="navbar__github">
-        <a
-          href="https://github.com/droomoord/kris-heijnen"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <BsGithub size="2.5em" />
-        </a>
+      <div className="side-links">
+        <div className="github">
+          <a
+            href="https://github.com/droomoord/kris-heijnen"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <BsGithub size="2.5em" />
+          </a>
+        </div>
       </div>
     </nav>
   );

@@ -3,19 +3,21 @@
   width: 100vw;
   position: relative;
   height: 100vh;
-  background: linear-gradient(180deg, $black 0 10%, $color2);
+  background: linear-gradient(180deg, $black 0 25%, $color2);
   &__wrapper {
+    overflow: hidden;
     width: 100%;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2em;
+    gap: 1em;
     .group {
-      text-align: center;
+      // text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -25,11 +27,14 @@
       }
       .my-name-is,
       h1 {
-        color: rgb(19, 19, 19);
+        color: rgb(203, 204, 218);
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.495);
+        font-weight: normal;
+        margin: 0;
+        letter-spacing: 0.09em;
       }
       .my-name-is {
         font-size: 1.5em;
-        font-weight: bold;
       }
       h1 {
         font-size: 1.5em;
@@ -42,18 +47,22 @@
         width: 25ch;
       }
     }
-    .avatar {
+    $width: 150px;
+    .photo-wrapper {
+      background-color: #ccc8ce;
+      opacity: 0.8;
+      width: $width;
       box-shadow: 0 0 8px rgba(0, 0, 0, 0.589);
       border-radius: 50%;
-      background-color: #f7f7f7;
-      padding: 1em;
-      top: 5em;
-      z-index: 1;
-      img {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-      }
+      aspect-ratio: 1;
+      overflow: hidden;
+    }
+    .photo {
+      background-image: url("/static/images/photo.jpg");
+      background-color: rgb(216, 216, 216);
+      background-position: center;
+      background-size: cover;
+      aspect-ratio: 1;
     }
   }
   .waves {
@@ -65,7 +74,6 @@
       width: calc(100vw + 500px);
     }
     svg {
-      z-index: 1;
       path {
         animation: move infinite;
         animation-direction: alternate;
@@ -75,6 +83,7 @@
       path:nth-of-type(1) {
         animation-duration: 10s;
         opacity: 0.1;
+        z-index: 100;
       }
       path:nth-of-type(2) {
         animation-duration: 7s;
@@ -96,11 +105,19 @@
   }
   @media only screen and (min-width: 700px) {
     .header__wrapper {
+      width: 50em;
+      aspect-ratio: 5 / 2;
+      gap: 3em;
       flex-direction: row;
-      .avatar img {
-        width: 120px;
-        height: 120px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      // padding: 3em 0;
+      // border: 1px solid rgb(33, 33, 33);
+      .photo-wrapper {
+        border: 3px solid $black;
+        width: 200px;
       }
+
       .group {
         text-align: left;
         h1,

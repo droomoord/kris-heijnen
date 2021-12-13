@@ -122,13 +122,15 @@
           border-radius: 5px;
           overflow: hidden;
           img {
+            filter: grayscale(100%);
             width: 100%;
             height: 100%;
           }
           video {
             opacity: 0;
             animation-name: fade-in;
-            animation-duration: 2s;
+            animation-delay: 1s;
+            animation-duration: 1s;
             animation-fill-mode: forwards;
             position: absolute;
             width: 100%;

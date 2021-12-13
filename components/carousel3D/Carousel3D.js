@@ -62,7 +62,7 @@ const Carousel3D = () => {
   return (
     <ObserverComponent
       addClass={["projects-in-view"]}
-      options={{ threshold: "0.9" }}
+      options={{ threshold: "0.5" }}
     >
       <div className="carousel3D">
         <div className="carousel3D__container">

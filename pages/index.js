@@ -24,16 +24,17 @@ export default function Home() {
   const coursesWrapperRef = useRef(null);
   const aboutRef = useRef(null);
 
-  // scroll position of the body element:
+  const [documentHeight, setDocumentHeight] = useState(0);
+  const [windowHeight, setWindowHeight] = useState(0);
   const [scrollPos, setScrollPos] = useState(0);
   const [contactModal, setContactModal] = useState(false);
   useEffect(() => {
-    // fade-in of the header elements:
-    // headerWrapperRef.current.querySelectorAll(":scope > *").forEach((el, i) => {
-    //   el.classList.add("fade-in");
-    //   el.style.animationDelay = `${i / 3 + 0.5}s`;
-    // });
     window.addEventListener("scroll", scrollHandler);
+    window.addEventListener("resize", resizeHandler);
+    setDocumentHeight(
+      document.body.offsetHeight || documentElement.offsetHeight
+    );
+    setWindowHeight(window.innerHeight);
   }, []);
   useEffect(() => {
     // make the document non-scrollable when the contact modal is visible
@@ -44,6 +45,12 @@ export default function Home() {
   function scrollHandler() {
     // keep track of scroll position:
     setScrollPos(document.body.scrollTop || document.documentElement.scrollTop);
+  }
+  function resizeHandler() {
+    setDocumentHeight(
+      document.body.offsetHeight || documentElement.offsetHeight
+    );
+    setWindowHeight(window.innerHeight);
   }
 
   function scrollToSection(section) {
@@ -56,6 +63,9 @@ export default function Home() {
         break;
       case "about":
         aboutRef.current.scrollIntoView();
+        break;
+      case "contact":
+        setContactModal(true);
         break;
       default:
         break;
@@ -72,21 +82,21 @@ export default function Home() {
       <main>
         {/* HEADER */}
         <header className="header">
-          <div className="desktop">
-            {
-              <Navbar
-                visibility={scrollPos > 100}
-                scrollToSection={scrollToSection}
-              />
-            }
-          </div>
+          <Navbar
+            scrollToSection={scrollToSection}
+            scrollPos={scrollPos}
+            documentHeight={documentHeight}
+            windowHeight={windowHeight}
+          />
           <div className="header__wrapper" ref={headerWrapperRef}>
-            <div className="avatar">
-              <img src="/avatar.png" alt="kris heijnen" />
+            <div className="photo-wrapper">
+              <div className="photo"></div>
             </div>
             <div className="group">
-              <div className="my-name-is">Hi, my name is</div>
-              <h1>Kris Heijnen</h1>
+              <div>
+                <div className="my-name-is">Hi, my name is</div>
+                <h1>Kris Heijnen</h1>
+              </div>
               <h4 className="mono">
                 <WriteAnimation
                   sentence="Front-end web developer"
@@ -141,17 +151,31 @@ export default function Home() {
           <h2 className="about__title">About me</h2>
 
           <div className="about__wrapper">
+            <blockquote>
+              My goal is to build up experience, become comfortable using a
+              variety of technologies and most of all, being able to know when
+              to implement what.
+            </blockquote>
             <p>
-              I{"'"}m a self taught developer that is looking to get hired. Most
-              of my life I have have worked as a musician, but now I{"'"}m
-              looking for an opportunity to change careers. I have done a bit of
-              freelancing, but I would love to be working as part of a team.
+              I{"'"}m a self taught developer that is looking for a junior
+              front-end position. I have done a bit of freelancing, but prefer
+              to be working in a team. I would love to be working with a
+              front-end framework such as{" "}
+              <span className="mono normalize">ReactJS</span>. <br /> I{"'"}m
+              the kind of person that likes to solve puzzles. In my spear time I
+              love to go over to{" "}
+              <a
+                href="https://www.codewars.com/users/droomoord"
+                target="_blank"
+                className="mono normalize"
+                rel="noreferrer"
+              >
+                Codewars.com
+              </a>{" "}
+              and try to solve algorithms.
             </p>
-            <p>
-              I really enjoy working with a front-end framework, such as{" "}
-              <span className="mono normalize">React</span> or{" "}
-              <span className="mono normalize">Vue</span>
-            </p>
+
+            <p>Feel free to contact me about anything!</p>
             <button
               className="contact-button"
               onClick={() => setContactModal(true)}
