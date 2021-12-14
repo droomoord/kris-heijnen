@@ -8,10 +8,11 @@
   backdrop-filter: blur(0);
   background-color: rgba(0, 0, 0, 0);
   animation: blur 0.2s linear forwards;
-  z-index: 50;
+  z-index: 300;
   overflow-y: scroll;
 }
 .contact {
+  z-index: 500;
   cursor: initial;
   animation: drop-in 0.1s linear forwards;
   border-radius: 10px;
@@ -125,9 +126,3 @@
     @include button;
   }
 }
-
-// @media only screen and (min-width: 700px) {
-//   .contact {
-//     width: 30em;
-//   }
-// }

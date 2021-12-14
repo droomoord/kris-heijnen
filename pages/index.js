@@ -151,11 +151,11 @@ export default function Home() {
           <h2 className="about__title">About me</h2>
 
           <div className="about__wrapper">
-            <blockquote>
+            <i>
               My goal is to build up experience, become comfortable using a
               variety of technologies and most of all, being able to know when
               to implement what.
-            </blockquote>
+            </i>
             <p>
               I{"'"}m a self taught developer that is looking for a junior
               front-end position. I have done a bit of freelancing, but prefer
@@ -180,7 +180,7 @@ export default function Home() {
               className="contact-button"
               onClick={() => setContactModal(true)}
             >
-              <AiOutlineMail size="1.2em" /> Contact me!
+              <AiOutlineMail size="1.2em" /> <span>Contact me!</span>
             </button>
             {contactModal && (
               <ContactModal removeModal={() => setContactModal(false)} />

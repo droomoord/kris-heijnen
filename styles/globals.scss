@@ -4,10 +4,46 @@
 @mixin button {
   @include mono;
   background-color: $color3;
-  border: 2px solid darken($color3, 40);
+  border: 2px solid darken($color3, 5);
   color: white;
   border-radius: 5px;
   cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  &:hover {
+    background-color: darken($color3, 5);
+  }
+}
+@mixin button-hover {
+  & * {
+    z-index: 2;
+  }
+  &::before,
+  &::after {
+    z-index: 1;
+    content: "";
+    background-color: darken($color3, 5);
+    width: 50%;
+    display: none;
+    height: 100%;
+    position: absolute;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-duration: 0.4s;
+  }
+  &:hover {
+    background-color: $color3;
+  }
+  &:hover::before {
+    display: block;
+    left: 0;
+    animation-name: move-right;
+  }
+  &:hover::after {
+    display: block;
+    right: 0;
+    animation-name: move-left;
+  }
 }
 @mixin header {
   font-weight: normal;

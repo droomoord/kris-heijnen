@@ -48,10 +48,11 @@ const Form = ({ removeModal }) => {
           headers: { "Content-Type": "multipart/form-data" },
           data: form,
         });
-        for (var pair of form.entries()) {
-          console.log(pair[0] + ", " + pair[1]);
-        }
-        setMsgHasBeenSent(true);
+        if (res.status == 200) setMsgHasBeenSent(true);
+        else
+          alert(
+            `Something went wrong. Please try again. Response status: ${res.status}`
+          );
       }
     } catch (error) {
       console.log(error);
