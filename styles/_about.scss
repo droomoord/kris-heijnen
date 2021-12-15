@@ -1,6 +1,6 @@
 .about {
   min-height: calc(100vh - 60px);
-  background-color: lighten($color2, 20);
+  background-color: lighten($color2, 30);
   padding: 60px 0.5em;
 
   &__title {
@@ -46,7 +46,7 @@
     &__wrapper {
       padding: 0em 3em;
       width: 50em;
-      border-left: 5px solid $color4;
+      border-left: 5px solid rgba(0, 0, 0, 0.26);
       margin-top: 3em;
     }
   }

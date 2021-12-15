@@ -83,7 +83,7 @@
   //desktop
 
   .carousel3D {
-    padding-top: 5em;
+    padding-top: 3em;
     opacity: 0;
     $width: 450px;
     $height: 300px;
@@ -107,7 +107,7 @@
         display: block;
         position: absolute;
         width: $width;
-        height: 28em;
+        min-height: 28em;
         color: $white;
         border-radius: 10px;
         background-color: rgb(41, 41, 41);
@@ -164,7 +164,7 @@
       border-radius: 10px;
       padding: 0.4em 0.7em;
       position: absolute;
-      bottom: 7em;
+      bottom: 5em;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
@@ -200,7 +200,7 @@
       .delete {
         cursor: pointer;
         color: $color3;
-        opacity: 0.2;
+        opacity: 0.4;
         &:hover {
           opacity: 0.7;
         }
@@ -243,7 +243,8 @@
 
 @media only screen and (min-width: 700px) {
   .projects {
-    height: 900px;
+    padding-top: 60px;
+    min-height: 900px;
     // height: calc(100vh + 100px);
     &__title {
       opacity: 0.7;

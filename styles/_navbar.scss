@@ -15,7 +15,7 @@
   align-items: center;
   justify-content: space-between;
   .progress-bar {
-    transition: transform 0.3s ease;
+    transition: transform 0.3s linear;
     transform-origin: left;
     position: absolute;
     width: 100%;
@@ -23,6 +23,7 @@
     left: 0;
     height: 5px;
     background: $color2;
+    opacity: 0.5;
   }
 
   &__primary-links {
@@ -33,7 +34,13 @@
     border: none;
     background-color: inherit;
     font-size: 1em;
+    color: grey;
   }
+  &__link:hover,
+  .link--active {
+    color: black;
+  }
+
   &__secondary-links {
     height: 100%;
     display: flex;
@@ -67,7 +74,7 @@
     padding-right: 1em;
     &__primary-links {
       & > * {
-        margin-right: 3em;
+        margin-right: 1.5em;
       }
     }
   }

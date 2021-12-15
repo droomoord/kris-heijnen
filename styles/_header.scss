@@ -44,7 +44,7 @@
       h4 {
         color: $color1;
         size: 1.2em;
-        height: 1em;
+        height: 1.5em;
         width: 25ch;
       }
     }
@@ -59,11 +59,14 @@
       overflow: hidden;
     }
     .photo {
+      background-color: #ccc8ce;
       background-image: url("/static/images/photo.jpg");
       background-color: rgb(216, 216, 216);
       background-position: center;
-      background-size: cover;
+      background-repeat: no-repeat;
+      background-size: 110%;
       aspect-ratio: 1;
+      filter: grayscale(30%);
     }
   }
   .waves {

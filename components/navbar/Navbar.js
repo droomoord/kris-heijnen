@@ -1,5 +1,5 @@
 import { BsGithub } from "react-icons/bs";
-import { SiMinutemailer } from "react-icons/si";
+import { GrMail } from "react-icons/gr";
 
 import { useState, useEffect } from "react";
 
@@ -11,8 +11,14 @@ const Navbar = ({
 }) => {
   const [progress, setProgress] = useState(0);
   useEffect(() => {
-    setProgress((scrollPos / (documentHeight - windowHeight)).toFixed(2));
+    setProgress((scrollPos / (documentHeight - windowHeight)).toFixed(1));
   }, [documentHeight, scrollPos, windowHeight]);
+  function clicked(section, e) {
+    console.log(e);
+
+    scrollToSection(section);
+    e.target.classList.add("link--active");
+  }
   return (
     <nav
       className={`navbar ${
@@ -28,19 +34,19 @@ const Navbar = ({
 
       <div className="navbar__primary-links">
         <button
-          onClick={() => scrollToSection("projects")}
+          onClick={(e) => clicked("projects", e)}
           className="navbar__link projects-link"
         >
           Projects
         </button>
         <button
-          onClick={() => scrollToSection("courses")}
+          onClick={(e) => clicked("courses", e)}
           className="navbar__link courses-link"
         >
           Education
         </button>
         <button
-          onClick={() => scrollToSection("about")}
+          onClick={(e) => clicked("about", e)}
           className="navbar__link about-link"
         >
           About
@@ -55,7 +61,7 @@ const Navbar = ({
           <BsGithub />
         </a>
         <div onClick={() => scrollToSection("contact")}>
-          <SiMinutemailer />
+          <GrMail />
         </div>
       </div>
     </nav>

@@ -4,7 +4,7 @@
     "description": "A visual artists (responsive) website that Ive built with *NextJS*. It is mainly used for displaying images of upcoming exhibitions, so I made sure that all images are lazy loaded (using Javascripts *intersection* *observer* *API*). The website is in Dutch.",
     "url": "https://www.ateliergaleriedegarage.nl/",
     "image": "/degarage.png",
-    "video": "degarage.mp4"
+    "video": "degarage.mov"
   },
   {
     "title": "Regexpert",
@@ -26,13 +26,13 @@
     "description": "A full stack project: create an account, rate movies, connect with friends and find out which movie you both interested in. It uses *VueJS* and *Bootstrap* in the front-end, *Express* in the back. It's hosted on Heroku, using a free tier so be patient as it loads :)",
     "url": "https://incredible-movie-matcher.herokuapp.com/",
     "image": "/moviematcher.png",
-    "video": "moviematcher.mp4"
+    "video": "moviematcher.mov"
   },
   {
     "title": "Movie Matcher2",
-    "description": "A full stack project: create an account, rate movies, connect with friends and find out which movie you both interested in. It uses *VueJS* and *Bootstrap* in the front-end, *Express* in the back. It's hosted on Heroku, using a free tier so be patient as it loads :)",
-    "url": "https://incredible-movie-matcher.herokuapp.com/",
-    "image": "/moviematcher.png",
-    "video": "moviematcher.mp4"
+    "description": "I took some time to make this portfolio, so I thought I might as well add it to my portfolio. It's created with the help of *React*, but I used as little libraries as possible. Linked below is the source code. It's my latest project so it best reflects my skills.",
+    "url": "https://github.com/droomoord/kris-heijnen",
+    "image": "/portfolio.png",
+    "video": "portfolio.mov"
   }
 ]

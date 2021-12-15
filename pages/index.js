@@ -112,23 +112,35 @@ export default function Home() {
         {/* PROJECTS */}
         <section className="projects" ref={projectsRef}>
           <h2 className="projects__title">Projects</h2>
-          <div className="mobile">
-            <Carousel />
-          </div>
-          <div className="desktop">
-            <Carousel3D />
-          </div>
+          <ObserverComponent
+            addClass={["link--active"]}
+            targetClass={"projects-link"}
+            options={{ threshold: "0.5" }}
+          >
+            <>
+              <div className="mobile">
+                <Carousel />
+              </div>
+              <div className="desktop">
+                <Carousel3D />
+              </div>
+            </>
+          </ObserverComponent>
         </section>
         {/* COURSES */}
         <section className="courses" ref={coursesRef}>
           <h2 className="courses__title">Education</h2>
-          <div className="courses__wrapper" ref={coursesWrapperRef}>
-            {courses.map((course, index) => {
-              const observerOptions = {
-                threshold: "1.0",
-              };
-              return (
-                <>
+          <ObserverComponent
+            addClass={["link--active"]}
+            targetClass={"courses-link"}
+            options={{ threshold: "0.5" }}
+          >
+            <div className="courses__wrapper" ref={coursesWrapperRef}>
+              {courses.map((course, index) => {
+                const observerOptions = {
+                  threshold: "1.0",
+                };
+                return (
                   <ObserverComponent
                     addClass={["fade-in-course"]}
                     options={observerOptions}
@@ -142,50 +154,55 @@ export default function Home() {
                       {course.description}
                     </Course>
                   </ObserverComponent>
-                </>
-              );
-            })}
-          </div>
+                );
+              })}
+            </div>
+          </ObserverComponent>
         </section>
         <section className="about" ref={aboutRef}>
           <h2 className="about__title">About me</h2>
 
-          <div className="about__wrapper">
-            <i>
-              My goal is to build up experience, become comfortable using a
-              variety of technologies and most of all, being able to know when
-              to implement what.
-            </i>
-            <p>
-              I{"'"}m a self taught developer that is looking for a junior
-              front-end position. I have done a bit of freelancing, but prefer
-              to be working in a team. I would love to be working with a
-              front-end framework such as{" "}
-              <span className="mono normalize">ReactJS</span>. <br /> I{"'"}m
-              the kind of person that likes to solve puzzles. In my spear time I
-              love to go over to{" "}
-              <a
-                href="https://www.codewars.com/users/droomoord"
-                target="_blank"
-                className="mono normalize"
-                rel="noreferrer"
+          <ObserverComponent
+            addClass={["link--active"]}
+            targetClass={"about-link"}
+            options={{ threshold: "0.5" }}
+          >
+            <div className="about__wrapper">
+              <i>
+                My goal is to build up experience, become comfortable using a
+                variety of technologies and most of all, being able to know when
+                to implement what.
+              </i>
+              <p>
+                I{"'"}m a self taught developer that is looking for a junior
+                front-end position. I have done a bit of freelancing, but prefer
+                to be working in a team. I would love to be working with a
+                front-end framework such as{" "}
+                <span className="mono normalize">ReactJS</span>. <br /> I{"'"}m
+                the kind of person that likes to solve puzzles. In my spear time
+                I love to go over to{" "}
+                <a
+                  href="https://www.codewars.com/users/droomoord"
+                  target="_blank"
+                  className="mono normalize"
+                  rel="noreferrer"
+                >
+                  Codewars.com
+                </a>{" "}
+                and try to solve algorithms.
+              </p>
+              <p>Feel free to contact me about anything!</p>
+              <button
+                className="contact-button"
+                onClick={() => setContactModal(true)}
               >
-                Codewars.com
-              </a>{" "}
-              and try to solve algorithms.
-            </p>
-
-            <p>Feel free to contact me about anything!</p>
-            <button
-              className="contact-button"
-              onClick={() => setContactModal(true)}
-            >
-              <AiOutlineMail size="1.2em" /> <span>Contact me!</span>
-            </button>
-            {contactModal && (
-              <ContactModal removeModal={() => setContactModal(false)} />
-            )}
-          </div>
+                <AiOutlineMail size="1.2em" /> <span>Contact me!</span>
+              </button>
+              {contactModal && (
+                <ContactModal removeModal={() => setContactModal(false)} />
+              )}
+            </div>
+          </ObserverComponent>
         </section>
       </main>
 
