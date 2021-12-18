@@ -1,5 +1,12 @@
 [
   {
+    "title": "Joao Vedana",
+    "description": "A website I created for João Vedana, a musician. It is built with *NextJS* and a CMS called Sanity. The system is set up in a way that whenever the content changes Vercel creates new static files to be served, which provides for a fast load time and makes it SEO-friendly.",
+    "url": "https://www.joaovedana.com/",
+    "image": "/joao.png",
+    "video": "joao.mp4"
+  },
+  {
     "title": "Arteliergalerie de Garage",
     "description": "A visual artists (responsive) website that Ive built with *NextJS*. It is mainly used for displaying images of upcoming exhibitions, so I made sure that all images are lazy loaded (using Javascripts *intersection* *observer* *API*). The website is in Dutch.",
     "url": "https://www.ateliergaleriedegarage.nl/",
@@ -12,13 +19,6 @@
     "url": "https://regexp-tester.netlify.app/",
     "image": "/regexpert.png",
     "video": "regexpert.mp4"
-  },
-  {
-    "title": "Joao Vedana",
-    "description": "A website I created for João Vedana, a musician. It is built with *NextJS* and a CMS called Sanity. The system is set up in a way that whenever the content changes Vercel creates new static files to be served, which provides for a fast load time and makes it SEO-friendly.",
-    "url": "https://www.joaovedana.com/",
-    "image": "/joao.png",
-    "video": "joao.mp4"
   },
 
   {

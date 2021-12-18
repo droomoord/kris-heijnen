@@ -169,18 +169,21 @@ export default function Home() {
           >
             <div className="about__wrapper">
               <i>
-                My goal is to build up experience, become comfortable using a
-                variety of technologies and most of all, being able to know when
-                to implement what.
+                My goal is to become a experienced web developer that is fully
+                capable of writing readable and performant code, using the
+                latest technologies.
               </i>
               <p>
-                I{"'"}m a self taught developer that is looking for a junior
-                front-end position. I have done a bit of freelancing, but prefer
-                to be working in a team. I would love to be working with a
-                front-end framework such as{" "}
-                <span className="mono normalize">ReactJS</span>. <br /> I{"'"}m
-                the kind of person that likes to solve puzzles. In my spear time
-                I love to go over to{" "}
+                I{"'"}m a self taught developer that has done a bit of
+                freelancing. Right now my focus is getting work experience in a
+                team. I would love to be working with a front-end
+                framework/library such as{" "}
+                <span className="mono normalize">ReactJS</span>. There is
+                something really satisfactory about implementing code, and to
+                see it work. For me it{"'"}s the perfect balance between
+                creativity and technical skills. <br />
+                <br /> I{"'"}m the kind of person that likes to solve puzzles.
+                In my spear time I love to go over to{" "}
                 <a
                   href="https://www.codewars.com/users/droomoord"
                   target="_blank"

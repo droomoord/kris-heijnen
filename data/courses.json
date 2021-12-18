@@ -2,7 +2,7 @@
   {
     "title": "The Web Developer Bootcamp (Colt Steele @Udemy.com)",
     "date": "nov-dec 2019",
-    "description": "This was the first developer course I took, but I had some HTML knowledge prior to this course. I learned CSS, basic *Javascript*, *JQuery*, *Bootstrap*, *Express* and more. It made me really enthusiastic about programming."
+    "description": "This was the first developer course I took, though I had some HTML knowledge prior to this course. I learned CSS, basic *Javascript*, *JQuery*, *Bootstrap*, *Express* and more. It made me really enthusiastic about programming."
   },
   {
     "title": "React - The Complete Guide (Maximilian Schwarzmüller @Udemy.com)",
@@ -12,12 +12,12 @@
   {
     "title": "MERN Stack Front To Back: Full Stack React, Redux and Node.js",
     "date": "march-april 2020",
-    "description": "This course consisted mainly of building a social media application (called DevConnector). Starting out with the backend API, creating protected routes, and then moving on to the front-end (React). Very challenging, but I learned a lot."
+    "description": "This course consisted mainly of building a social media application (called DevConnector). Starting out with the backend API, creating protected routes, and then moving on to the front-end (React). Very challenging, I learned a lot."
   },
   {
-    "title": "Vue JS - The Complete Guide (incl. Vue Router and Vuex",
+    "title": "Vue JS - The Complete Guide (incl. Vue Router and Vuex)",
     "date": "aug-sep 2020",
-    "description": ""
+    "description": "I learned about Vue directives, components, data binding, etc. "
   },
   {
     "title": "Next.js and React - The Complete Guide",

@@ -44,8 +44,10 @@
   }
   //mobile:
   .swiper {
+    border: 1px solid $white;
     background-color: $black;
     padding: 0px;
+    padding: 0.5em;
     border-radius: 5px;
     width: 95%;
     max-width: 1200px;
@@ -68,10 +70,10 @@
 
     .swiper-button-next,
     .swiper-button-prev {
-      color: $black;
+      color: $color3;
       font-weight: bold;
 
-      text-shadow: 0 0 5px rgb(255, 255, 255);
+      text-shadow: 2px 2px 2px rgb(0, 0, 0);
       top: 30%;
     }
 

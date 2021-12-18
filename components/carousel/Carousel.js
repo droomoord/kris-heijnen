@@ -39,7 +39,9 @@ export default function App() {
                 <p
                   dangerouslySetInnerHTML={{ __html: project.description }}
                 ></p>
-                <a href={project.url}>{project.url}</a>
+                <a href={project.url} target="_blank" rel="noreferrer">
+                  {project.url}
+                </a>
               </div>
             </SwiperSlide>
           );
