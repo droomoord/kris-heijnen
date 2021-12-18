@@ -180,8 +180,8 @@ export default function Home() {
                 framework/library such as{" "}
                 <span className="mono normalize">ReactJS</span>. There is
                 something really satisfactory about implementing code, and to
-                see it work. For me it{"'"}s the perfect balance between
-                creativity and technical skills. <br />
+                see it work. I love the creativity and technological
+                understanding it requirers. <br />
                 <br /> I{"'"}m the kind of person that likes to solve puzzles.
                 In my spear time I love to go over to{" "}
                 <a

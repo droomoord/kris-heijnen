@@ -17,11 +17,11 @@
   {
     "title": "Vue JS - The Complete Guide (incl. Vue Router and Vuex)",
     "date": "aug-sep 2020",
-    "description": "I learned about Vue directives, components, data binding, etc. "
+    "description": "I learned about Vue directives, components, data binding, front-end routing. Basically all the things i learned in React, but in a different form. The best aspect of Vue I think is the usage of directives, which makes your code clean and readable (whereas in React you use JSX, it can get messy)."
   },
   {
     "title": "Next.js and React - The Complete Guide",
     "date": "jan-feb 2021",
-    "description": ""
+    "description": "This course showed me why Next.js is such a popular framework. I learned about Server Side Rendering (SSR), Static Site Generation (SSG), and Incremental Static Site Regeneration (ISSR). I found out that Next.js is really SEO-friendly. You can even write back-end express-like API routes with Next. It's like building a front-end and back-end application in one framework!"
   }
 ]
