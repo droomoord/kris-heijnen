@@ -98,10 +98,7 @@ export default function Home() {
                 <h1>Kris Heijnen</h1>
               </div>
               <h4 className="mono">
-                <WriteAnimation
-                  sentence="Front-end web developer"
-                  delay={1000}
-                />
+                <WriteAnimation sentence="I'm a web developer" delay={1000} />
               </h4>
             </div>
           </div>
@@ -174,10 +171,9 @@ export default function Home() {
                 latest technologies.
               </i>
               <p>
-                I{"'"}m a self taught developer that has done a bit of
-                freelancing. Right now my focus is getting work experience in a
-                team. I would love to be working with a front-end
-                framework/library such as{" "}
+                I{"'"}m a self taught developer that has freelancing experience.
+                Right now my focus is getting work experience in a team. I would
+                love to be working with a front-end framework/library such as{" "}
                 <span className="mono normalize">ReactJS</span>. There is
                 something really satisfactory about implementing code, and to
                 see it work. I love the creativity and technological
