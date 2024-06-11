@@ -1,5 +1,12 @@
 [
   {
+    "title": "De Nijverheid",
+    "description": "The Nijverheid is a \"culturele vrijhaven\" in Utrecht, featuring studios and creative workspaces for over 50 independent artists, designers, and creative makers. I chose Wordpress as a robust CMS for the content creators. Frontend is detached and is a custom design.",
+    "url": "https://denijverheid.org/",
+    "image": "/nijverheid.png",
+    "video": null
+  },
+  {
     "title": "Joao Vedana",
     "description": "A website I created for João Vedana, a musician. It is built with *NextJS* and a CMS called Sanity. The system is set up in a way that whenever the content changes Vercel creates new static files to be served, which provides for a fast load time and makes it SEO-friendly.",
     "url": "https://www.joaovedana.com/",
@@ -19,26 +26,5 @@
     "url": "https://regexp-tester.netlify.app/",
     "image": "/regexpert.png",
     "video": "regexpert.mp4"
-  },
-
-  {
-    "title": "Movie Matcher",
-    "description": "A full stack project: create an account, rate movies, connect with friends and find out which movie you both interested in. It uses *VueJS* and *Bootstrap* in the front-end, *Express* in the back. It's hosted on Heroku, using a free tier so be patient as it loads :)",
-    "url": "https://incredible-movie-matcher.herokuapp.com/",
-    "image": "/moviematcher.png",
-    "video": "moviematcher.mov"
-  },
-  {
-    "title": "Movie Matcher2",
-    "description": "I took some time to make this portfolio, so I thought I might as well add it to my portfolio. It's created with the help of *React*, but I used as little libraries as possible. Linked below is the source code. It's my latest project so it reflects best the way I code now.",
-    "url": "https://github.com/droomoord/kris-heijnen",
-    "image": "/portfolio.png",
-    "video": "portfolio.mov"
-  },
-  {
-    "title": "Global Marketplaces REST API",
-    "description": "I created an API that searches products on various digital global marketplaces. Under the hood it uses Node and Express, and it is deployed on a Digital Ocean droplet.",
-    "url": "https://rapidapi.com/wildwildweb/api/global-marketplaces",
-    "image": "/api.png"
   }
 ]
