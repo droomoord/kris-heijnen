@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation, Autoplay } from "swiper";
+import { Pagination, Navigation, Autoplay } from "swiper/modules";
 
 //data
 import projects from "../../data/projects.json";
