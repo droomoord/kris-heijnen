@@ -94,7 +94,7 @@ const Carousel3D = () => {
                       src={`/static/images/${project.image}`}
                       alt={project.title}
                     />
-                    {index == currentIndex && (
+                    {index == currentIndex && project.video && (
                       <video
                         autoPlay={true}
                         loop
