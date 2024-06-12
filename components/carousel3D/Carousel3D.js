@@ -8,7 +8,7 @@ import projects from "../../data/projects.json";
 import { parseToHTML } from "../../functions";
 
 //components
-import { GoPrimitiveDot } from "react-icons/go";
+import { VscCircleFilled } from "react-icons/vsc";
 import { GrFormNext } from "react-icons/gr";
 import { VscTrash } from "react-icons/vsc";
 import WriteAnimation from "../writeAnimation/WriteAnimation";
@@ -135,7 +135,7 @@ const Carousel3D = () => {
             <div className="dots">
               {projectsState.map((project, index) => {
                 return (
-                  <GoPrimitiveDot
+                  <VscCircleFilled
                     key={project.title}
                     className={
                       index == currentIndex ? "dot dot--active" : "dot"
