@@ -5,7 +5,7 @@ const WriteAnimation = ({ sentence, delay }) => {
   useEffect(() => {
     setTimeout(() => {
       let index = 0;
-      const interval = setInterval(addLetter, 100);
+      const interval = setInterval(addLetter, 200);
       function addLetter() {
         if (sentence.length === index) clearInterval(interval);
         setResult((prev) => prev + sentence.charAt(index));
