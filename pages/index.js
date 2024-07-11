@@ -98,7 +98,7 @@ export default function Home() {
                 <h1>Kris Heijnen</h1>
               </div>
               <h4 className="mono">
-                <WriteAnimation sentence="I'm a web developer" delay={1000} />
+                <WriteAnimation sentence="Web Developer" delay={1000} />
               </h4>
             </div>
           </div>
