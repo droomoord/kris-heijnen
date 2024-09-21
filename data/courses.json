@@ -25,8 +25,8 @@
     "description": "This course showed me why Next.js is such a popular framework. I learned about Server Side Rendering (SSR), Static Site Generation (SSG), and Incremental Static Site Regeneration (ISSR). I found out that Next.js is really SEO-friendly. You can even write back-end express-like API routes with Next. It's like building a front-end and back-end application in one framework!"
   },
   {
-    "title": "CODAM",
-    "date": "aug 2022",
-    "description": "I will propably start a 2 year education at Codam in Amsterdam in august 2022. I will provide more information here later."
+    "title": "Working at InBrain",
+    "date": "sep 2022 until now",
+    "description": "InBrain is a company focused on digital learning solutions. Together with a small development team, I am responsible for maintaining and improving a highly customizable Learning Management System (LMS) using PHP, MySQL, and Vue.js."
   }
 ]
