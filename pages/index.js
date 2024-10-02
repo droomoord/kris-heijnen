@@ -166,10 +166,10 @@ export default function Home() {
           >
             <div className="about__wrapper">
               <p>
-              Hi, I'm Kris, a web developer with a passion for creating clean, efficient, and impactful code. While I love the technical challenge that coding brings — debugging, optimizing, and building something from scratch — what truly drives me is the opportunity to create solutions that make a difference for people.
+              Hi, I{"'"}m Kris, a web developer with a passion for creating clean, efficient, and impactful code. While I love the technical challenge that coding brings — debugging, optimizing, and building something from scratch — what truly drives me is the opportunity to create solutions that make a difference for people.
               </p>
               <p>
-              Whether it's designing a smooth user experience, improving website performance, or building tools that simplify daily tasks, I believe that technology should always be about making things better for real people. I'm excited to work on projects that align with this philosophy, where my skills can contribute to something bigger than just the code itself.
+              Whether it{"'"}s designing a smooth user experience, improving website performance, or building tools that simplify daily tasks, I believe that technology should always be about making things better for real people. I{"'"}m excited to work on projects that align with this philosophy, where my skills can contribute to something bigger than just the code itself.
               </p>
               <button
                 className="contact-button"
