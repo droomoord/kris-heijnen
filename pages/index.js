@@ -126,7 +126,7 @@ export default function Home() {
         </section>
         {/* COURSES */}
         <section className="courses" ref={coursesRef}>
-          <h2 className="courses__title">Education</h2>
+          <h2 className="courses__title">Education and work</h2>
           <ObserverComponent
             addClass={["link--active"]}
             targetClass={"courses-link"}
@@ -157,7 +157,7 @@ export default function Home() {
           </ObserverComponent>
         </section>
         <section className="about" ref={aboutRef}>
-          <h2 className="about__title">About me</h2>
+        <h2 className="about__title">About me</h2>
 
           <ObserverComponent
             addClass={["link--active"]}
@@ -165,37 +165,17 @@ export default function Home() {
             options={{ threshold: "0.5" }}
           >
             <div className="about__wrapper">
-              <i>
-                My goal is to become a experienced web developer that is fully
-                capable of writing readable and performant code, using the
-                latest technologies.
-              </i>
               <p>
-                I{"'"}m a self taught developer that has freelancing experience.
-                Right now my focus is getting work experience in a team. I would
-                love to be working with a front-end framework/library such as{" "}
-                <span className="mono normalize">ReactJS</span>. There is
-                something really satisfactory about implementing code, and to
-                see it work. I love the creativity and technological
-                understanding it requirers. <br />
-                <br /> I{"'"}m the kind of person that likes to solve puzzles.
-                In my spear time I love to go over to{" "}
-                <a
-                  href="https://www.codewars.com/users/droomoord"
-                  target="_blank"
-                  className="mono normalize"
-                  rel="noreferrer"
-                >
-                  Codewars.com
-                </a>{" "}
-                and try to solve algorithms.
+              Hi, I'm Kris, a web developer with a passion for creating clean, efficient, and impactful code. While I love the technical challenge that coding brings — debugging, optimizing, and building something from scratch — what truly drives me is the opportunity to create solutions that make a difference for people.
               </p>
-              <p>Feel free to contact me about anything!</p>
+              <p>
+              Whether it's designing a smooth user experience, improving website performance, or building tools that simplify daily tasks, I believe that technology should always be about making things better for real people. I'm excited to work on projects that align with this philosophy, where my skills can contribute to something bigger than just the code itself.
+              </p>
               <button
                 className="contact-button"
                 onClick={() => setContactModal(true)}
               >
-                <AiOutlineMail size="1.2em" /> <span>Contact me!</span>
+                <AiOutlineMail size="1.2em" /> <span>Get in touch</span>
               </button>
               {contactModal && (
                 <ContactModal removeModal={() => setContactModal(false)} />
