@@ -1,5 +1,3 @@
-import axios from "axios";
-
 import { useState, useRef, useEffect } from "react";
 
 import { FiSend } from "react-icons/fi";
@@ -42,11 +40,11 @@ const Form = ({ removeModal }) => {
         form.append("name", name);
         form.append("email", email);
         form.append("message", message);
-        const res = await axios({
-          method: "post",
-          url: "https://formcarry.com/s/tCSVXyR26iM",
-          headers: { "Content-Type": "multipart/form-data" },
-          data: form,
+        // No Content-Type: the browser has to set the multipart boundary.
+        const res = await fetch("https://formcarry.com/s/tCSVXyR26iM", {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: form,
         });
         if (res.status == 200) setMsgHasBeenSent(true);
         else
