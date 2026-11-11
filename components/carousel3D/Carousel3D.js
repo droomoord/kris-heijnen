@@ -22,21 +22,19 @@ const Carousel3D = () => {
   const [projectToBeDeleted, setProjectToBeDeleted] = useState(null);
 
   function clicked(targetIndex) {
-    setCurrentIndex((prevIndex) => {
-      let amountOfTurns = prevIndex - targetIndex;
-      //check if there might be a shorter path to the targetIndex:
-      if (Math.abs(amountOfTurns) > projectsState.length / 2) {
-        if (amountOfTurns < 0) {
-          amountOfTurns = projectsState.length - Math.abs(amountOfTurns);
-        } else if (amountOfTurns > 0) {
-          amountOfTurns = Math.abs(amountOfTurns) - projectsState.length;
-        }
+    let amountOfTurns = currentIndex - targetIndex;
+    //check if there might be a shorter path to the targetIndex:
+    if (Math.abs(amountOfTurns) > projectsState.length / 2) {
+      if (amountOfTurns < 0) {
+        amountOfTurns = projectsState.length - Math.abs(amountOfTurns);
+      } else if (amountOfTurns > 0) {
+        amountOfTurns = Math.abs(amountOfTurns) - projectsState.length;
       }
-      setCurrentDeg((prevDeg) => {
-        return prevDeg + amountOfTurns * turnDeg;
-      });
-      return targetIndex;
+    }
+    setCurrentDeg((prevDeg) => {
+      return prevDeg + amountOfTurns * turnDeg;
     });
+    setCurrentIndex(targetIndex);
   }
 
   function remove(targetIndex) {
